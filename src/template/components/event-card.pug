@@ -1,0 +1,50 @@
+//begin event-card
+mixin eventCard(item)
+	+b.event-card(class= item.classMod ? item.classMod : '')
+		if item.title
+			+e.H6.title= item.title
+		if item.date
+			+e.date= item.date
+		if item.mainLink
+			+e.A.main-link(href='#!')= item.mainLink
+		if item.hashTag
+			+e.A.hashtag(href='#!')= item.hashTag
+		if item.descr
+			+e.P.descr.js-dot= item.descr
+		if item.readLink
+			+e.A.read-link.link(href='#!')
+				+e.SPAN= item.readLink
+				+i('arr_r')
+		if item.defDescr
+			+e.P.def-descr
+				+e.STRONG= item.defDescrBold
+				= ' '
+				= item.defDescr
+		if item.defDescrTwo
+			+e.P.def-descr
+				+e.STRONG= item.defDescrBoldTwo
+				= ' '
+				= item.defDescrTwo
+		if item.defDescrThree
+			+e.hidden
+				+e.hidden-in
+					+e.P.def-descr
+						+e.STRONG= item.defDescrBoldThree
+						= ' '
+						= item.defDescrThree
+					+e.person
+						+e.person-img
+							+e.IMG(src='static/img/content/Vanka_Ivanov.jpg' alt='img')
+						+e.P.person-data
+							+e.STRONG Юрист:
+							= ' '
+							| Иван Иванов
+					if item.btn
+						+e.A.btn.btn._black(href='#!')= item.btn
+
+if cardsCount
+	-var n = 0
+	while n < cardsCount
+		-n += 1
+		each item in eventCardList
+			+eventCard(item)

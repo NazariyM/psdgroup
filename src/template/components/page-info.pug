@@ -1,0 +1,21 @@
+if pageInfo ? pageInfo : pageInfo = []
+if pageInfo.title ? pageInfo.title : pageInfo.title = 'Title'
+
+//begin page-info
++b.SECTION.page-info(class= pageInfo.classMod ? pageInfo.classMod : '' style='background-image: url(static/img/bg/page-info_bg.jpg)')
+	+e.container.container
+		+b.UL.breadcrumbs(class= breadcrumbsClass ? breadcrumbsClass : 'page-info__breadcrumbs')
+			for breadcrumbsLink, index in breadcrumbsList
+				+e.LI.item(class= index === activeIndex - 1 ? 'is-active' : '')
+					+e.A.link(href='#!')= breadcrumbsLink
+
+		+e.text(class=pageInfo.textClassMod ? pageInfo.textClassMod : '')
+			+e.H2.title(class=pageInfo.titleClassMod ? pageInfo.titleClassMod : '').title-md._white= pageInfo.title
+			if pageInfo.subTitle
+				+e.H4.sub-title.title-sm-white= pageInfo.subTitle
+			if pageInfo.descr
+				+e.P.descr= pageInfo.descr
+			if pageInfo.btn
+				+e.BUTTON.btn.btn(class= pageInfo.btnClass ? pageInfo.btnClass : '' type='button')= pageInfo.btn
+	if pageInfo.line !== false
+		+b.line

@@ -1,0 +1,47 @@
+extends ../extend/default
+
+block variables
+	-title = 'Главная'
+	-headerClass = '_home'
+	-homeHeader = true
+	-map = true
+
+block main
+	main.content.content_home(data-page='home')
+
+		//-screen
+		include ../components/screen
+
+		//begin quick-info
+		+b.SECTION.quick-info(data-fade-on-scroll)
+			+e.container.container
+				//-about
+				include ../components/about-block
+				//-events
+				include ../components/events
+			+b.line._top(data-fade-line)
+
+		-directionsBlockClass = '_home'
+		include ../components/directions
+
+		//-geography
+		include ../components/geo
+
+		//-analytics
+		include ../components/analytics
+
+		//-projects
+		include ../components/projects
+
+		//begin cooperation
+		+b.SECTION.cooperation
+			+e.container.container
+				+e.col: -coopBlock= [{title: 'Клиенты'}]
+									include ../components/coop-block
+
+				+e.col: -coopBlock= [{title: 'Партнеры'}]
+									include ../components/coop-block
+		//begin ask
+		+b.SECTION.ask(data-fade-on-scroll)
+			+e.container.container
+				+e.A.title.title-md._white(href='#!') Остались вопросы?

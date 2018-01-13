@@ -1,0 +1,74 @@
+extends ../extend/default
+
+block variables
+	-title = 'Наши сотрудники'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'наши сотрудники']
+		-activeIndex = 2
+		-pageInfo = {title: 'наши сотрудники', line: false}
+		include ../components/page-info
+
+		//begin team
+		+b.SECTION.team
+			+e.container.container
+				-rowCount = 0
+				while rowCount < 3
+					+e.row
+						-
+							teamList = [{
+							img: '2',
+							name: 'Родищев Николай',
+							pos: 'Юрист'
+							}, {
+							img: '1',
+							name: 'Косов Андрей',
+							pos: 'Юрист'
+							}, {
+							img: '3',
+							name: 'Иванова Кристина',
+							pos: 'Юрист'
+							}]
+
+						mixin teamItem(item)
+							+e.person(data-fade-delay)
+								+e.person-img
+									+e.IMG(src=`static/img/content/testimon-${item.img}.png` alt='image')
+								+e.person-data= item.name
+								+e.person-data._color= item.pos
+								+e.person-details
+									+e.P.person-descr
+										+e.STRONG Стаж работы:
+										= ' '
+										+e.SPAN 5 лет
+									+e.P.person-descr
+										+e.STRONG Специализация:
+										+e.BR
+										= ' '
+										+e.A.person-link(href='#!') Уголовное
+										|,
+										= ' '
+										+e.A.person-link(href='#!') административное право
+
+									+e.person-contacts
+										+e.P.person-contacts-title Контактная информация
+										+e.A.person-mail.link(href='#!')
+											+e.SPAN info@group-alt.com
+
+									+e.BUTTON.person-more-btn.btn(type='button') Узнать подробнее
+
+						each item in teamList
+							+teamItem(item)
+
+					-rowCount++
+
+				+e.BUTTON.more-btn.btn(type='button') Все сотрудники компании
+
+		//begin ask
+		+b.SECTION.ask(data-fade-on-scroll)
+			+e.container.container
+				+e.A.title.title-md._white(href='#!') Остались вопросы?

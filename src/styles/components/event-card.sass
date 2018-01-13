@@ -1,0 +1,212 @@
+/* ===================================
+	 event-card
+	 =================================== */
+.event-card
+	position: relative
+	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+	background-color: rgba($white, .9)
+	color: $blue-dark
+	text-align: left
+	cursor: default
+	line-height: 1
+	$el: &
+	&__title
+		+f('pn-700', 17, 30)
+		color: $blue-dark
+		+xs
+			margin-bottom: 5px
+			line-height: 22px
+	&__date
+		margin-bottom: 8px
+		+f('pn-700', 16)
+	&__hashtag
+		+f('pn-700', 12)
+		color: $orange
+		text-transform: uppercase
+		letter-spacing: -.03em
+		.no-touch &:hover
+			color: $blue-dark
+	&__descr
+		height: 75px
+		margin: 8px 0 16px
+		padding-right: 10px
+		+f('pn-400', 16, 25)
+		+md
+			height: 100px
+		+sm
+			height: 75px
+		+xs
+			height: auto
+	&__def-descr
+		margin-top: 9px
+		line-height: 25px
+		text-align: left
+	&__read-link
+		text-transform: uppercase
+		+f('pn-700', 15)
+		span
+			transition: none
+			border-bottom: 1px solid rgba(#c0c1c4, .6)
+		.icon
+			vertical-align: -3px
+			margin-left: 4px
+			font-size: 13px
+			+gpu
+	&__main-link
+		display: inline-block
+		margin-top: 5px
+		+f('pn-700', 14, 22)
+		text-transform: uppercase
+		letter-spacing: .04em
+		color: $orange
+	&__person
+		display: flex
+		align-items: center
+		margin: 10px 0 31px
+		+sm
+			margin: 10px 0 14px
+		&-img
+			width: 45px
+			height: 45px
+			margin-right: 10px
+			overflow: hidden
+			border-radius: 50%
+			+cover-img
+		&-pos
+			+f('pn-700')
+		&-name
+			+f('pn-300')
+	&__btn
+		padding: 0 31px
+	&__hidden
+		max-height: 0
+		overflow: hidden
+		position: absolute
+		top: 102px
+		left: 0
+		right: 0
+		z-index: 3
+		transform-origin: 50% 0
+		transform: scaleY(0)
+		transition: .3s cubic-bezier(0.55, 0.06, 0.68, 0.19)
+		text-align: center
+		background: #f7f7f7
+		+sm
+			position: static
+			max-height: none
+			transform: none
+			background: $white
+		&-in
+			padding: 5px 30px 30px
+			+sm
+				padding: 0
+	
+	&_read
+		min-height: 204px
+		margin-bottom: 30px
+		padding: 20px 30px 29px
+		z-index: 1
+		+md
+			margin-bottom: 10px
+		+sm
+			margin-bottom: 20px
+		+xs
+			padding: 25px 20px 25px
+		&::after
+			pointer-events: none
+			content: ''
+			+coverdiv
+			transition: .3s
+		&:hover::after
+			top: -10px
+			right: -10px
+			left: -10px
+			bottom: -10px
+			z-index: -1
+			background: $orange
+		&:hover
+			color: $white
+			box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+		&:hover #{$el}__title
+			color: $white
+		&:hover #{$el}__hashtag
+			color: $white
+		&:hover #{$el}__read-link span
+			color: $white
+			border-bottom-color: rgba($white, .7)
+	
+	&_projects
+		padding: 32px 30px 29px
+		z-index: 1
+		transition: background .3s ease
+		+xs
+			min-width: 300px
+			padding: 25px 20px 25px
+		&::before
+			position: absolute
+			top: 45%
+			left: 0
+			right: 0
+			bottom: 55%
+			content: ''
+			z-index: -1
+			background: #f7f7f7
+			transition: .3s ease
+			+sm
+				display: none
+		&::after
+			content: ''
+			position: absolute
+			top: 100%
+			left: 0
+			right: 0
+			bottom: -51%
+			transform: perspective(400px) rotate3d(1, 0, 0, -90deg)
+			transform-origin: 50% 0
+			+trs
+			background: #f7f7f7
+			box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2)
+			+sm
+				display: none
+		&:hover::before
+			top: 0
+		&:hover::after
+			max-height: 1000px
+			transform: perspective(400px) rotate3d(0, 0, 0, 0)
+		&:hover
+			background: #f7f7f7
+			+sm
+				background: $white
+		&:hover > #{$el}__def-descr
+			opacity: 0
+			+sm
+				opacity: 1
+		&:hover #{$el}__hidden
+			max-height: 1000px
+			transform: scaleY(1)
+			
+	&_side
+		padding: 20px 18px 20px 24px
+		+sm
+			display: inline-block
+			vertical-align: top
+			width: calc(50% - 20px)
+			margin: 0 10px 20px
+		+xs
+			width: 100%
+			margin: 0 0 20px
+		&:not(:first-of-type)
+			margin-top: 25px
+			+sm
+				margin: 0 10px 20px
+			+xs
+				margin: 0 0 20px
+	&_side #{$el}__descr
+		margin: 8px 0 11px
+		height: 60px
+		font-size: 14px
+		line-height: 20px
+	&_side #{$el}__read-link
+		span
+			margin-right: 2px
+		

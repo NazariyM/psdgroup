@@ -1,0 +1,77 @@
+extends ../extend/default
+
+block variables
+	-title = 'Формы'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		+e.container.container(style='display: flex; flex-direction: column; justify-content: space-around; align-items: center; margin-top: 300px; height: 140px;')
+			+e.BUTTON.btn(type='button' data-popup-target='vacancyPopup') отправить заявку
+			+e.BUTTON.btn(type='button' data-popup-target='askPopup') Задать вопрос
+
+	//begin vacancy popup
+	+b.popup(data-popup-id='vacancyPopup', tabindex='-1', role='dialog')
+		+e.container
+			+e.close.js-popup-close
+				+i('close')
+			+e.H3.title.title-sm Отправить заявку на вакансию Помощьник адвоката (юриста)
+			+e.FORM.form(action='#!' method='POST')
+				+e.inner
+					+e.form-field
+						+e.INPUT.input.input._md(type='text' placeholder='Ваше имя' required name='')
+						+e.P.form-example Пример: Иванов Иван Иванович
+					+e.form-field.date-field
+						+e.INPUT.input.input._md._date(type='text' placeholder='Дата рождения' required name='')
+						+b.LABEL.date-field__btn
+							+i('calendar')
+							+b.INPUT.js-date(type='date' placeholder='' name='')
+						+e.P.form-example Формат: дд.мм.гггг
+					+e.form-field
+						+e.INPUT.input.input._md(type='text' placeholder='E-mail' required name='')
+						+e.P.form-example Обратный адрес куда мы пришлем ответ на вакансию
+					+e.form-field
+						+e.TEXTAREA.message.message(placeholder='Краткое сопроводительное письмо')
+						+e.P.form-example Расскажите почему, Вы идеальный кандидат
+				+e.add
+					+e.P.form-descr Готовое резюме в виде документа PDF, DOC (максимальный размер 5мб.)
+					+b.LABEL.link._add
+						+i('screpka')
+						+e.SPAN Прикрепить
+						+e.INPUT(type='file' name='file')
+				+e.BUTTON.submit-btn.btn(type='submit') отправить заявку
+
+	//begin vacancy popup
+	+b.popup(data-popup-id='askPopup', tabindex='-1', role='dialog')
+		+e.container
+			+e.close.js-popup-close
+				+i('close')
+			+e.H3.title.title-sm Сформулируйте ваш вопрос и получите оперативный ответ
+			+e.FORM.form(action='#!' method='POST')
+				+e.inner
+					+e.form-field
+						+e.TEXTAREA.message.message(placeholder='Суть Вашего вопроса')
+					+e.form-field._left
+						+b.LABEL.link._add
+							+i('screpka')
+							+e.SPAN Прикрепить файл
+							+e.INPUT(type='file' name='file')
+				+e.block
+					+e.inner
+						+e.H3.title.title-sm Ваши контактные данные
+						+e.form-field
+							+e.INPUT.input.input._md(type='text' placeholder='Ваше имя' required name='')
+						+e.form-row
+							+e.form-col
+								+e.INPUT.input.input._md(type='email' placeholder='E-mail' required name='')
+							+e.form-col
+								+b.SELECT.js-select.in-popup
+									+e.OPTION Москва
+									+e.OPTION Самара
+									+e.OPTION Москва
+				+e.BUTTON.submit-btn.btn(type='submit') Задать вопрос
+			+e.P.descr Настоящим подтверждаю, что я ознакомлен и согласен с
+				= ' '
+				+e.SPAN условиями политики и конфиденциальности

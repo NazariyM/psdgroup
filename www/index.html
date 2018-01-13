@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="ru"><meta charset="UTF-8"><title>web pages</title><link href="https://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css"><style>* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    text-align: left;
+    padding: 20px 40px;
+    border-bottom: 2px #ededed solid;
+}
+
+footer {
+    font-size: 12px;
+    color: #a5a5a8;
+    padding: 45px;
+}
+
+.content {
+    border-top: 2px #fff solid;
+    padding: 45px;
+    background: #ededed;
+    position: relative;
+    overflow: hidden;
+}
+
+.pager {
+    width: 50%;
+}
+
+.page {
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+.page .number {
+    float: left;
+    font-size: 13px;
+    color: #a5a5a8;
+}
+
+.page .name {
+    padding-left: 30px;
+    font-size: 14px;
+    color: #28292a;
+    margin-bottom: 5px;
+}
+
+.page .description {
+    padding-left: 30px;
+    font-size: 12px;
+    color: #636363;
+}
+
+.page:hover, .page:hover .number, .page:hover .name, .page:hover .description {
+    color: #a5a5a8;
+}
+
+.window {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%) translateX(25%) scale(0.5);
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 4px #fff solid;
+    background: #fff;
+}</style><script>var pager = [
+  [
+    'home.html',
+    '01',
+    'Главная',
+    ''
+  ],
+  [
+    'leader.html',
+    '02',
+    'О руководителе',
+    ''
+  ],
+  [
+    'team.html',
+    '03',
+    'Наши сотрудники',
+    ''
+  ],
+  [
+    'vacancies.html',
+    '04',
+    'Вакансии',
+    ''
+  ],
+  [
+    'about.html',
+    '05',
+    'О компании',
+    ''
+  ],
+  [
+    'testimonials.html',
+    '06',
+    'Отзывы клиентов',
+    ''
+  ],
+  [
+    'contacts.html',
+    '07',
+    'Контакты',
+    ''
+  ],
+  [
+    'project.html',
+    '08',
+    'Карточка проекта',
+    ''
+  ],
+  [
+    'blog.html',
+    '10',
+    'Блог',
+    ''
+  ],
+  [
+    'article-page.html',
+    '11',
+    'Статья',
+    ''
+  ],
+  [
+    'review.html',
+    '12',
+    'Обзор',
+    ''
+  ],
+  [
+    'services.html',
+    '13',
+    'Услуги',
+    ''
+  ],
+  [
+    'services-list.html',
+    '13',
+    'Услуги (списком)',
+    ''
+  ],
+  [
+    'service-type.html',
+    '14',
+    'Вид услуги',
+    ''
+  ],
+  [
+    'service-text.html',
+    '14',
+    'Вид услуги (текст)',
+    ''
+  ],
+  [
+    'popups.html',
+    '15',
+    'Формы',
+    ''
+  ]
+];</script><header><h1>Pages:</h1></header><div class="content"><div class="pager"></div></div><div class="window"><iframe src="" width="468" height="60" align="left">Ваш браузер не поддерживает плавающие фреймы!</iframe></div><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script>$(document).ready(function () {
+  var links = '';
+  for (var i = 0, length = pager.length; i < length; i++) {
+    links += '<a class="page" href="' + pager[i][0] + '"><div class="number">' + pager[i][1] + '</div><div class="name">' + pager[i][2] + '</div><div class="description">' + pager[i][3] + '</div><div class="click"></div> </a>';
+  }
+  $('.pager').append(links);
+
+  $('.page .click').click(function () {
+    url = $(this).parent().attr('href');
+    $('iframe').attr('src', url);
+    return false
+  });
+});</script></html>

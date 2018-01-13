@@ -1,0 +1,51 @@
+.footer
+	padding: 45px 0 33px
+	+xs
+		padding: 30px 0
+	&__container
+		display: flex
+		align-items: center
+		+xs
+			flex-wrap: wrap
+			justify-content: center
+			flex-direction: column
+	&__logo
+		margin-right: 60px
+		flex: 0 0 auto
+		+sm
+			margin-right: 30px
+		+xs
+			margin-right: 0
+	&__info
+		flex: 0 1 515px
+		padding-right: 15px
+		line-height: 24px
+		+xs
+			flex: 1 1 auto
+			text-align: center
+			margin: 15px 0
+		&-text
+			+f('pn-300')
+			&_bold
+				+f('pn-700')
+	&__dev
+		margin-left: auto
+		+sm
+			text-align: right
+			text-align-last: right
+		+xs
+			margin-left: 0
+		&::before
+			content: ''
+			display: inline-block
+			vertical-align: sub
+			margin-right: 9px
+			width: 16px
+			height: 20px
+			background: url("../img/icons/dev.png") no-repeat 50% 50%
+		.no-touch &:hover a
+			border-bottom-color: #f95645
+		a
+			color: #f95645
+			border-bottom: 1px solid rgba(#f95645, .4)
+			+trs

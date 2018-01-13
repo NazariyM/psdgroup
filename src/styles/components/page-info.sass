@@ -1,0 +1,121 @@
+.page-info
+	position: relative
+	display: flex
+	height: 368px
+	animation: fadeIn 1.2s
+	+cover
+	+md
+		height: 280px
+	&::after
+		content: ''
+		+coverdiv
+		background: rgba(#1b1e28, .9)
+	.line
+		left: 22.6%
+	&__container
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		align-items: flex-start
+		flex: 1 1 100%
+		z-index: 1
+	&__text
+		flex: 1 1 100%
+		margin-top: -72px
+		text-align: center
+		+sm
+			margin-top: -40px
+		&_has-sub-title
+			margin-top: -30px
+			+sm
+				margin-top: -10px
+	&__text_has-sub-title-big &__sub-title
+		max-width: none
+		font-size: 30px
+	&__title
+		position: relative
+		text-transform: uppercase
+		+xs
+			font-size: 32px
+		&::after
+			content: ''
+			position: absolute
+			left: calc(50% - 47px)
+			bottom: -24px
+			width: 94px
+			height: 3px
+			background: $orange
+			z-index: 1
+		&_sm
+			max-width: 650px
+			margin: 0 auto
+		+sm
+			font-size: 32px
+			line-height: 32px
+	&__sub-title
+		max-width: 620px
+		margin: 20px auto 0
+		font-size: 20px
+		line-height: 30px
+		+sm
+			margin: 5px auto 0
+			font-size: 17px
+			line-height: 25px
+	&__descr
+		margin: 40px auto 0
+		max-width: 730px
+		color: $white
+		+f('pn-300', 17, 28)
+	&__btn
+		margin-top: 30px
+		font-size: 13px
+		
+	&__breadcrumbs
+		flex: 1 1 100%
+		margin: 39px 0 0
+		+sm
+			margin: 25px 0 0
+			
+	&_has-descr
+		height: 598px
+		+md
+			height: 500px
+		+xs
+			height: auto
+	&_has-descr &__text
+		margin-top: -30px
+		+xs
+			margin-top: 0
+			padding: 20px 0 35px
+
+/* breadcrumbs
+	----------------------------------- */
+.breadcrumbs
+	display: flex
+	$parent: &
+	+xs
+		flex-wrap: wrap
+	&__item
+		&:first-child #{$parent}__link
+			color: $white
+			background: $orange
+		&:not(:first-child)
+			margin-left: 4px
+		+xs
+			margin: 5px
+	&__item.is-active &__link
+		pointer-events: none
+	&__link
+		display: block
+		padding: 0 18px
+		height: 25px
+		line-height: 27px
+		+f('pn-700', 11)
+		text-transform: uppercase
+		border-radius: 12px
+		transition: .3s
+		background-color: #d0d1d2
+		color: #717171
+		.no-touch &:hover
+			color: $white
+			background: $orange

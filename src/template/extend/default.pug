@@ -1,0 +1,39 @@
+include ../partials/_variables
+include ../partials/mixins
+include ../bemto/index
+
+doctype html
+html(lang='ru')
+
+	block variables
+	include ../components/head
+
+	body
+		// svg
+		block svg
+			div.svg-container(style="position: absolute; width: 0; height: 0; overflow: hidden;")
+				include ../partials/_sprite.svg
+
+		// picture element HTML5 shiv
+		block inlineScripts
+			script.
+				document.createElement('picture');
+
+		.out
+			// begin header
+			block header
+				include ../components/header
+
+			// begin main
+			block main
+				main
+
+			// begin footer
+			block footer
+				include ../components/footer
+		// scripts
+		block scripts
+			if map === true
+				script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU', type='text/javascript')
+			script(src='static/js/index.jquery.js')
+			script(src='static/js/index.js')

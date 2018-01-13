@@ -1,0 +1,134 @@
+.team
+	padding: 67px 0 90px
+	+sm
+		padding: 45px 0 50px
+	&__container
+		text-align: center
+	&__row
+		display: flex
+		align-items: flex-start
+		margin: 0 -15px 30px
+		+md
+			margin: 0 -5px 30px
+		+xs
+			flex-wrap: wrap
+			margin: 0
+	&__person
+		position: relative
+		flex-basis: calc(33.33333% - 30px)
+		width: calc(33.33333% - 30px)
+		margin: 0 15px
+		padding: 20px 40px 0
+		color: $blue-dark
+		text-align: center
+		background: $white
+		transition: box-shadow .3s ease
+		+md
+			flex-basis: calc(33.33333% - 10px)
+			width: calc(33.33333% - 10px)
+			margin: 0 5px
+		+sm
+			padding: 15px 15px 0
+		+xs
+			flex-basis: 100%
+			width: 100%
+			margin: 0 0 25px
+		&::after
+			pointer-events: none
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2)
+			background: $white
+			content: ''
+			z-index: -1
+			transform: scaleY(0)
+			opacity: 0
+			transform-origin: 100% 100%
+			transition: transform .3s ease, opacity .3s
+			+xs
+				opacity: 1
+				transform: none
+		&:hover
+			z-index: 6
+		&:hover::after
+			opacity: 1
+			transform: scaleY(1)
+		&:hover &-details
+			opacity: 1
+			transform: scaleY(1)
+		&-img
+			position: relative
+			padding-top: 110.4%
+			margin: 0 auto 18px
+			+sm
+				margin: 0 auto 10px
+			img
+				+coverdiv
+				width: 100%
+				height: 100%
+				object-fit: contain
+				font-family: 'object-fit: contain;'
+		&-data
+			+f('pn-700', 27, 35)
+			+sm
+				font-size: 23px
+			+xs
+				font-size: 28px
+			&_color
+				color: $orange
+		&-details
+			position: absolute
+			top: 99%
+			left: 0
+			right: 0
+			padding: 20px 15px 30px
+			transform: scaleY(0)
+			transform-origin: 0 0
+			opacity: 0
+			transition: transform .5s ease, opacity 0s
+			z-index: 3
+			background: $white
+			box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2)
+			+sm
+				padding: 10px 10px 20px
+			+xs
+				position: static
+				transform: none
+				opacity: 1
+				box-shadow: none
+				padding: 10px 15px 25px
+		&-descr
+			+f('pn-300')
+			&:not(:first-child)
+				margin-top: 5px
+			strong
+				+f('pn-600')
+		&-link
+			transition: color .3s ease
+			.no-touch &:hover
+				color: $orange
+		&-contacts
+			margin: 26px 0 0
+			+f('pn-700', 12)
+			text-transform: uppercase
+			color: #717171
+			+sm
+				margin: 15px 0 0
+			&-title
+				margin-bottom: 15px
+		&-mail
+			span
+				margin: 0
+				color: #1b1e28
+				+f('pn-400')
+				text-transform: none
+		&-more-btn
+			margin-top: 15px
+			height: 35px
+			line-height: 35px
+
+	&__more-btn
+		margin-top: 20px

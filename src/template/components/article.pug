@@ -1,0 +1,50 @@
+if article ? article : article = []
+if article.title ? article.title : article.title = 'Title'
+
+//begin article
++b.ARTICLE.article(class= article.classMod ? article.classMod : '')
+	+e.H3.title.title-sm= article.title
+
+	+e.info
+		+e.date
+			+i('calendar')
+			+e.SPAN 15.08.2017
+
+		+e.hash
+			+e.A.hash-link(href='#!') #исковоепроизводство
+
+	+e.head
+		+e.share
+			+e.SPAN поделиться:
+
+			-socialsClass = '_gray'
+			include ../components/socials
+
+		+e.discuss
+			+e.A.discuss-link(href='#!')
+				+i('discuss')
+				+e.SPAN обсудить
+
+	+e.FIGURE.picture
+		+e.IMG.picture-img(src='static/img/content/judges.jpg' alt='image')
+		+e.FIGCAPTION.picture-descr Арбитражный суд города Москвы
+
+	+e.text
+		+e.P.text-item._bold Данное судебное дело стало продолжением судебного дела, которое налогоплательщик изначально проиграл. Несколько лет назад он купил имущество, которое сразу же сдал в аренду обратно своему продавцу.
+		+e.P.text-item Налоговый орган доказал в суде, что указанные сделки по покупке и аренде имущества являются мнимыми. Но в рамках первого спора единственным налоговым последствием стал отказ налогоплательщику в вычетах по приобретенному имуществу. При этом не обсуждался вопрос, а что делать с НДС, который налогоплательщик исключил со сделки аренды (а в итоге НДС он еще и уплатил в бюджет). Вот этот самый НДС налогоплтельщик и поделал вернуть: если никакой аренды не было то НДС по такой аренде исчисляться был не должен.
+		+e.P.text-item Данное судебное дело стало продолжением судебного дела, которое налогоплательщик изначально проиграл. Несколько лет назад он купил имущество, которое сразу же сдал в аренду обратно своему
+
+	+e.footer
+		+e.author
+			+e.SPAN автор:
+			= ' '
+			+e.SPAN косов андрей
+		+e.BUTTON.share-btn.btn._black(type='button') поделиться
+
+	+e.nav
+		+e.A.nav-link.link._prev(href='#!')
+			+i('arr_r')
+			+e.SPAN предыдущая
+		+e.A.nav-link.link(href='#!')
+			+e.SPAN следующая
+			+i('arr_r')

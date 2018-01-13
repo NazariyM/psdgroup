@@ -1,0 +1,127 @@
+extends ../extend/default
+
+block variables
+	-title = 'БЛОГ'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'БЛОГ', 'АРБИТРАЖНЫЙ ПРОЦЕС']
+		-activeIndex = 3
+		-pageInfo = {title: 'БЛОГ'}
+		include ../components/page-info
+
+		//begin grid
+		+b.grid(data-fade-on-scroll)._aside-left
+			.container
+				+e.row
+					+e.main
+						//begin blog
+						+b.ARTICLE.blog-article
+							+e.H3.title.title-md Арбитражный процесс
+							+e.info
+								+e.SPAN.info-item 03.05.2017
+								+e.SPAN.info-item автор: косов андрей
+							+e.inner
+								+e.image
+									+e.IMG(src='static/img/content/article-img_2.jpg' alt='image')
+								+e.descr
+									+e.P.text._bold Данное судебное дело стало продолжением судебного дела, которое налогоплательщик изначально проиграл. Несколько лет назад он купил имущество, которое сразу же сдал в аренду обратно своему продавцу.
+									+e.P.text Налоговый орган доказал в суде, что указанные сделки по покупке и аренде имущества являются мнимыми. Но в рамках первого спора единственным налоговым последствием стал отказ налогоплательщику в вычетах по приобретенному имуществу. При этом не обсуждался вопрос, а что делать с НДС, который налогоплательщик исключил со сделки аренды (а в итоге НДС он еще и уплатил в бюджет). Вот этот самый НДС налогоплтельщик и поделал вернуть: если никакой аренды не было то НДС по такой аренде исчисляться был не должен.
+									+e.P.text Данное судебное дело стало продолжением судебного дела, которое налогоплательщик изначально проиграл. Несколько лет назад он купил имущество, которое сразу же сдал в аренду обратно своему продавцу. Налоговый орган доказал в суде, что указанные сделки по покупке и аренде имущества являются мнимыми. Но в рамках первого спора единственным налоговым последствием стал отказ налогоплательщику в вычетах по приобретенному имуществу. При этом не обсуждался вопрос, а что делать с НДС, который налогоплательщик исключил со сделки аренды (а в итоге НДС он еще и уплатил в бюджет). Вот этот самый НДС налогоплтельщик и поделал вернуть: если никакой аренды не было то НДС по такой аренде исчисляться был не должен.
+
+							-socialsClass = '_gray blog-article__socials'
+							include ../components/socials
+
+						//begin feed
+						+b.feedback
+							+e.image
+								+e.IMG(src='static/img/content/feed-img.jpg' alt='image')
+							+e.text
+								//begin rating
+								+b.rating.is-disabled
+									+e.in
+										+e.INPUT.input(id='feedback-rating-5' value='5' type='radio' name='feedback-rating')
+										+e.LABEL.icon(for='feedback-rating-5')
+											+i('star')
+										+e.INPUT.input(checked id='feedback-rating-4' value='4' type='radio' name='feedback-rating')
+										+e.LABEL.icon(for='feedback-rating-4')
+											+i('star')
+										+e.INPUT.input(id='feedback-rating-3' value='3' type='radio' name='feedback-rating')
+										+e.LABEL.icon(for='feedback-rating-3')
+											+i('star')
+										+e.INPUT.input(id='feedback-rating-2' value='2' type='radio' name='feedback-rating')
+										+e.LABEL.icon(for='feedback-rating-2')
+											+i('star')
+										+e.INPUT.input(id='feedback-rating-1' value='1' type='radio' name='feedback-rating')
+										+e.LABEL.icon(for='feedback-rating-1')
+											+i('star')
+
+								+e.P.descr Данное судебное дело стало продолжением судебного дела, которое налогоплательщик изначально проиграл. Несколько лет назад он купил имущество, которое сразу же сдал в аренду обратно своему продавцу. Налоговый орган доказал в суде, что указанные сделки по покупке и аренде имущества являются мнимыми. Но в рамках первого спора единственным налоговым последствием стал отказ.
+								+e.author косов андрей юрист
+
+						//begin user-feed
+						+b.user-feed
+							+e.H3.title.title-md Оставить отзыв
+							+e.FORM.form(action='#!' method='POST')
+								//begin rating
+								+b.rating
+									+e.in
+										+e.INPUT.input(id='feed-rating-5' value='5' type='radio' name='feedback-rating')
+										+e.LABEL.icon(for='feed-rating-5')
+											+i('star')
+										+e.INPUT.input(checked id='feed-rating-4' value='4' type='radio' name='feedback-rating')
+										+e.LABEL.icon(for='feed-rating-4')
+											+i('star')
+										+e.INPUT.input(id='feed-rating-3' value='3' type='radio' name='feedback-rating')
+										+e.LABEL.icon(for='feed-rating-3')
+											+i('star')
+										+e.INPUT.input(id='feed-rating-2' value='2' type='radio' name='feedback-rating')
+										+e.LABEL.icon(for='feed-rating-2')
+											+i('star')
+										+e.INPUT.input(id='feed-rating-1' value='1' type='radio' name='feedback-rating')
+										+e.LABEL.icon(for='feed-rating-1')
+											+i('star')
+								+e.message-wrap
+									+e.TEXTAREA.message.message(placeholder='Ваш комментарий')
+								+e.BUTTON.submit-btn.btn(type='submit') ОТПРАВИТЬ
+
+					+e.ASIDE.side
+						//begin tags
+						+b.tags
+							+e.H3.title.title-sm Теги:
+							-
+								tagsList = [
+								'налоговые споры',
+								'криминал',
+								'ВОПРОСЫ ЖКХ',
+								'страховка',
+								'административное право',
+								'офшоры',
+								'жилищные споры',
+								'материалы следствия',
+								'мнения']
+								activeIndex = 1
+							+e.UL.list
+								for tagsLink, index in tagsList
+									+e.LI.list-item(class= index === activeIndex - 1 ? 'is-active' : '')
+										+e.A.list-link(href='#!')= tagsLink
+
+						//begin read
+						+b.read._no-margin
+							+e.H3.title.title-sm Читайте так же:
+							-cardsCount = 5
+							-
+								eventCardList = [{
+								classMod: '_side',
+								date: '05.07',
+								hashTag: '#налоги и право',
+								descr: 'Все изменения Федерального Закона РФ “Об автомобильных дорогах и о дорожной деятельности”',
+								readLink: 'Читать'
+								}]
+							include ../components/event-card
+
+		//-ask block
+		include ../components/ask-block

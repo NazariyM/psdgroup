@@ -1,0 +1,122 @@
+if analytics ? analytics : analytics = []
+if analytics.title ? analytics.title : analytics.title = ['Аналитика']
+
+//begin analytics
++b.SECTION.analytics(class= analyticsClass ? analyticsClass : '' data-fade-on-scroll)
+	+e.container.container
+		+e.H3.title.title-md= analytics.title
+		// begin tabs
+		+b.c-tabs
+			+e.tabs-nav
+				+e.tabs-el.is-active БЛОГ
+				+e.tabs-el ПРОЕКТЫ
+				+e.tabs-el СТАТЬИ
+				+e.tabs-el АНОНСЫ
+			+e.tabs-for
+				+e.tab
+					+b.analytics__inner
+						-
+							subsBlock = [{
+							title: 'Будьте в курсе',
+							checkText: 'Я даю согласие на обработку своих персональных данных',
+							subDescr: 'В соответствии со статьей 9 Федерального закона от 27 июля 2006 г. №152-Ф3 “О персональных данных”',
+							btn: 'ОТПРАВИТЬ'
+							}]
+						+e.col
+							mixin subscrItem(el)
+								// begin subs-block
+								+b.subs-block
+									+e.H5.title.title-xs= el.title
+									+e.P.descr Подпишись на рассылку
+										+e.BR
+										| и получите новые новости
+									+e.FORM.form(action='#!' method='POST')
+										+e.form-field
+											+b.INPUT.input(type='email' placeholder='Ваш e-mail' name='email')
+										+e.form-field
+											+b.LABEL.checkbox
+												+e.INPUT.input(type='checkbox' name='check')
+												+e.box
+												+e.SPAN.text= el.checkText
+									+e.P.sub-descr= el.subDescr
+									+e.BUTTON.send-btn.btn(type='submit')= el.btn
+							each el in subsBlock
+								+subscrItem(el)
+
+						+e.col
+							-cardsCount = 2
+							-
+								var eventCardList = [{
+								classMod: '_read',
+								date: '05.07',
+								hashTag: '#правила дорожного движения',
+								descr: 'Все изменения Федерального Закона РФ “Об автомобильных дорогах и о дорожной деятельности”',
+								readLink: 'Читать'
+								}]
+							include ../components/event-card
+
+						+e.col
+							-cardsCount = 2
+							-
+								var eventCardList = [{
+								classMod: '_read',
+								date: '05.07',
+								hashTag: '#правила дорожного движения',
+								descr: 'Все изменения Федерального Закона РФ “Об автомобильных дорогах и о дорожной деятельности”',
+								readLink: 'Читать'}]
+							include ../components/event-card
+				+e.tab
+					+b.analytics__inner
+						-
+							subsBlock = [{
+							title: 'Будьте в курсе',
+							checkText: 'Я даю согласие на обработку своих персональных данных',
+							subDescr: 'В соответствии со статьей 9 Федерального закона от 27 июля 2006 г. №152-Ф3 “О персональных данных”',
+							btn: 'ОТПРАВИТЬ'
+							}]
+						+e.col
+							mixin subscrItem(el)
+								// begin subs-block
+								+b.subs-block
+									+e.H5.title.title-xs= el.title
+									+e.P.descr Подпишись на рассылку
+										+e.BR
+										| и получите новые новости
+									+e.FORM.form(action='#!' method='POST')
+										+e.form-field
+											+b.INPUT.input(type='email' placeholder='Ваш e-mail' name='email')
+										+e.form-field
+											+b.LABEL.checkbox
+												+e.INPUT.input(type='checkbox' name='check')
+												+e.box
+												+e.SPAN.text= el.checkText
+									+e.P.sub-descr= el.subDescr
+									+e.BUTTON.send-btn.btn(type='submit')= el.btn
+							each el in subsBlock
+								+subscrItem(el)
+
+						+e.col
+							-cardsCount = 2
+							-
+								var eventCardList = [{
+								classMod: '_read',
+								date: '05.07',
+								hashTag: '#правила дорожного движения',
+								descr: 'Все изменения Федерального Закона РФ “Об автомобильных дорогах и о дорожной деятельности”',
+								readLink: 'Читать'
+								}]
+							include ../components/event-card
+
+						+e.col
+							-cardsCount = 2
+							-
+								var eventCardList = [{
+								classMod: '_read',
+								date: '05.07',
+								hashTag: '#правила дорожного движения',
+								descr: 'Все изменения Федерального Закона РФ “Об автомобильных дорогах и о дорожной деятельности”',
+								readLink: 'Читать'}]
+							include ../components/event-card
+
+	+b.line-long(data-fade-line)
+		+e.SPAN.indicator 02

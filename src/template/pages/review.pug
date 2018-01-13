@@ -1,0 +1,80 @@
+extends ../extend/default
+
+block variables
+	-title = 'Обзор'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'ОБЗОРЫ ИЗМЕНЕНИЯ ЗАКОНОДАТЕЛЬСТВА']
+		-activeIndex = 2
+		-pageInfo = {title: 'ОБЗОРЫ ИЗМЕНЕНИЯ ЗАКОНОДАТЕЛЬСТВА', titleClassMod: '_sm'}
+		include ../components/page-info
+
+		//begin grid
+		+b.grid(data-fade-on-scroll)._review
+			.container
+				+e.row
+					+e.main
+						-
+							article = {
+							title: 'Организации и ИП в обязательном порядке переходят на онлайн-кассы'}
+						include ../components/article
+					+e.ASIDE.side
+						//begin read
+						+b.read._mod
+							+e.H3.title._small.title-sm Последние изменения в законодательстве
+							+e.block
+								-
+									readBlock = [
+									'Последние события в мире юриспруденции',
+									'Все изменения Федерального закона РФ',
+									'Последние события в мире юриспруденции',
+									'Все изменения Федерального закона РФ'
+									]
+								for readLink in readBlock
+									+e.block-item
+										+e.A.block-link.link(href='#!')
+											+e.SPAN= readLink
+										+e.block-date
+											+e.SPAN 30.07.2017
+						//-subs-block
+						-
+							subsBlock = [{
+							title: 'Будьте в курсе',
+							checkText: 'Я даю согласие на обработку своих персональных данных',
+							subDescr: 'В соответствии со статьей 9 Федерального закона от 27 июля 2006 г. №152-Ф3 “О персональных данных”',
+							btn: 'ОТПРАВИТЬ'
+							}]
+
+						mixin subscrItem(el)
+							// begin subs-block
+							+b.subs-block._small
+								+e.H5.title.title-xs= el.title
+								+e.P.descr Подпишись на рассылку
+									+e.BR
+									| и получите новые новости
+								+e.FORM.form(action='#!' method='POST')
+									+e.form-field
+										+b.INPUT.input(type='email' placeholder='Ваш e-mail' name='email')
+									+e.form-field
+										+b.LABEL.checkbox
+											+e.INPUT.input(type='checkbox' name='check')
+											+e.box
+											+e.SPAN.text= el.checkText
+									+e.P.sub-descr= el.subDescr
+									+e.BUTTON.send-btn.btn(type='submit')= el.btn
+						each el in subsBlock
+							+subscrItem(el)
+
+						//begin calendar
+						+b.archive
+							+e.H3.title.title-xs Архив
+							+b.calendar._side.js-calendar
+
+		//begin ask
+		+b.SECTION.ask(data-fade-on-scroll)
+			+e.container.container
+				+e.A.title.title-md._white(href='#!') Остались вопросы?

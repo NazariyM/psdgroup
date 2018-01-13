@@ -1,0 +1,67 @@
+if projects ? projects : projects = []
+if projects.title ? projects.title : projects.title = ['Решения']
+
+//begin projects
++b.SECTION.projects(class= projects.classMod ? projects.classMod : '' data-fade-on-scroll)
+	+e.container.container
+		+e.top
+			+e.H3.title.title-md= projects.title
+			+e.select
+				+b.SELECT.js-select
+					+e.OPTION все направления услуг
+					+e.OPTION технические решения
+					+e.OPTION дизайнерские решения
+
+		+e.cards
+			+e.cards-col
+				-cardsCount = 1
+				-
+					var eventCardList = [{
+					classMod: '_projects',
+					date: '05.07.2017',
+					mainLink: 'Дело о выселении арендатора незаконной реконструкции',
+					defDescrBold: 'Отрасль:',
+					defDescr: 'Неджвижимость и строительство.',
+					defDescrBoldTwo: 'Услуга:',
+					defDescrTwo: 'Коммерческая практика',
+					defDescrBoldThree: 'Итог:',
+					defDescrThree: 'Компания ALT GROUP успешно завершило дело в суде г. Москва',
+					btn: 'УЗНАТЬ БОЛЬШЕ'}]
+				include ../components/event-card
+
+			+e.cards-col
+				-cardsCount = 1
+				-
+					var eventCardList = [{
+					classMod: '_projects',
+					date: '05.07.2017',
+					mainLink: 'Дело о выселении арендатора незаконной реконструкции',
+					defDescrBold: 'Отрасль:',
+					defDescr: 'Неджвижимость и строительство.',
+					defDescrBoldTwo: 'Услуга:',
+					defDescrTwo: 'Коммерческая практика',
+					defDescrBoldThree: 'Итог:',
+					defDescrThree: 'Компания ALT GROUP успешно завершило дело в суде г. Москва',
+					btn: 'УЗНАТЬ БОЛЬШЕ'}]
+				include ../components/event-card
+
+			+e.cards-col
+				-cardsCount = 1
+				-
+					var eventCardList = [{
+					classMod: '_projects',
+					date: '05.07.2017',
+					mainLink: 'Дело о выселении арендатора незаконной реконструкции',
+					defDescrBold: 'Отрасль:',
+					defDescr: 'Неджвижимость и строительство.',
+					defDescrBoldTwo: 'Услуга:',
+					defDescrTwo: 'Коммерческая практика',
+					defDescrBoldThree: 'Итог:',
+					defDescrThree: 'Компания ALT GROUP успешно завершило дело в суде г. Москва',
+					btn: 'УЗНАТЬ БОЛЬШЕ'}]
+				include ../components/event-card
+
+		+e.A.all-btn.btn(href='#!') ВСЕ проекты
+
+	+b.line._top(data-fade-line)
+	+b.line._color(data-fade-line)

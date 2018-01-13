@@ -1,0 +1,71 @@
+extends ../extend/default
+
+block variables
+	-title = 'Контакты'
+	-headerClass = '_static'
+	-map = true
+
+block main
+	main.content.content_static(data-page='contacts')
+
+		-breadcrumbsList = ['Главная', 'контакты']
+		-activeIndex = 3
+		-
+			pageInfo = {title: 'контакты'}
+		include ../components/page-info
+
+		//begin contacts
+		+b.SECTION.contacts(data-fade-on-scroll)
+			+e.container.container
+				+b.contact-info.contacts__contact-info
+
+					+e.item
+						+i('loc')
+						= ' '
+						+e.P.text г. Москва, Кропоткинская пер. дом №4 пн-пт 9:00 - 18:00
+					+e.item
+						+e.A.link(href='#!')
+							+i('tel')
+							= ' '
+							+e.SPAN.link-text._font +7 (495) 123-45-67
+
+					+e.item
+						+e.A.link(href='#!')
+							+i('mail')
+							= ' '
+							+e.SPAN.link-text._decor info@group-alt.com
+
+					+e.BUTTON.btn.btn(type='button') ОБРАТНЫЙ ЗВОНОК
+					//-soc
+					-socialsClass = '_gray contacts__socials'
+					include ../components/socials
+
+				+e.map#contact-map
+
+		//begin questions
+		+b.SECTION.questions(data-fade-on-scroll)
+			+e.container.container
+				+e.H3.title.title-md Остались вопросы?
+				+e.FORM.form(action='#!' method='POST')
+					+e.form-field
+						+e.INPUT.form-input.input._md(type='text' placeholder='Ваше имя' name='text')
+					+e.form-col
+						+e.INPUT.form-input.input._md(type='text' placeholder='Телефон' name='text')
+					+e.form-col
+						+e.INPUT.form-input.input._md(type='text' placeholder='E-mail' name='text')
+					+e.form-col
+						+e.INPUT.form-input.input._md(type='text' placeholder='Компания (если есть)' name='text')
+					+e.form-col
+						+e.INPUT.form-input.input._md(type='text' placeholder='E-Ваш сайт (если есть)' name='text')
+					+e.form-field
+						+e.TEXTAREA.form-message.message(placeholder='Ваш вопрос')
+					+e.form-field
+						+b.LABEL.checkbox
+							+e.INPUT.input(type='checkbox' placeholder='' name='check')
+							+e.SPAN.box
+							+e.SPAN.text Я даю согласие на обработку своих персональных данных
+					+e.form-field
+						+e.P.form-descr В соответствии со статьей 9 Федерального закона от 27 июля 2006 г.
+							+e.BR
+							| №152-Ф3 “О персональных данных”
+					+e.BUTTON.form-btn.btn(type='submit') ОТПРАВИТЬ

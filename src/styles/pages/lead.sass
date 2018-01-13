@@ -1,0 +1,242 @@
+/* ===================================
+	 lead
+	 =================================== */
+.lead-info
+	padding: 75px 0 70px
+	+sm
+		padding: 55px 0 60px
+	+xs
+		padding: 40px 0 45px
+	&__container
+		+xs
+			display: flex
+			flex-wrap: wrap
+	&__title
+		margin-bottom: 30px
+		+xs
+			font-size: 31px
+			text-align: center
+			width: 100%
+	&__inner
+		display: flex
+		justify-content: space-between
+		+xs
+			flex-wrap: wrap
+	&__text
+		width: 73%
+		padding-right: 2%
+		color: #717171
+		font-size: 17px
+		line-height: 28px
+		+xs
+			width: 100%
+			padding: 0 5px
+		strong
+			+f('pn-600')
+		p
+			+f('pn-300')
+			&:not(:first-child)
+				margin-top: 18px
+	&__img
+		width: percentage(267 / 1110)
+		margin-top: -86px
+		max-width: 267px
+		+sm
+			width: 27%
+			margin-top: -110px
+		+xs
+			width: 100%
+			margin: 0 auto 25px
+			order: -1
+		img
+			width: 100%
+			height: 100%
+			object-fit: contain
+			font-family: 'object-fit: contain;'
+			
+
+/* ===================================
+	 graph
+	 =================================== */
+.graph
+	position: relative
+	padding: 81px 0 90px
+	background-color: #f6f6f6
+	+md
+		padding: 60px 0 70px
+	+xs
+		padding: 45px 0 30px
+	&__container
+		display: flex
+		justify-content: space-between
+		+md
+			flex-wrap: wrap
+			justify-content: space-around
+	&__col
+		position: relative
+		flex: 0 0 255px
+		cursor: default
+		+md
+			flex: 0 0 488px
+			padding: 0 15px 35px
+		+sm
+			flex: 0 0 369px
+		+xs
+			flex: 1 1 100%
+			padding: 0 0 35px
+		&::after
+			position: absolute
+			top: 80px
+			left: calc(50% - 1px)
+			height: 75%
+			border-left: 2px dashed $orange
+			content: ''
+			z-index: 0
+			+md
+				height: 60%
+	&__col:nth-child(3) &__card:nth-of-type(2)
+		padding: 21px 25px
+		line-height: 24px
+		+md
+			padding: 52px 25px
+		+sm
+			padding: 39px 25px
+	&__col:nth-child(4) &__card:nth-of-type(2)
+		padding: 23px 25px
+	&__date
+		display: block
+		margin-bottom: 35px
+		+f('pn-700', 35)
+		color: $orange
+		text-align: center
+		+md
+			margin-bottom: 15px
+	&__card
+		display: flex
+		align-items: center
+		position: relative
+		padding: 19px 25px
+		min-height: 191px
+		background: $white
+		box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+		color: $blue-dark
+		+f('pn-300', 16, 25)
+		z-index: 2
+		transition: .3s ease
+		+md
+			min-height: 150px
+		+sm
+			padding: 19px 20px
+			min-height: 160px
+		&:not(:first-child)
+			margin-top: 20px
+		.no-touch &:hover
+			color: $white
+		.no-touch &:hover .graph__card-bg
+			opacity: 1
+			top: -12px
+			left: -20px
+			right: -20px
+			bottom: -13px
+		&-bg
+			opacity: 0
+			+coverdiv
+			+cover
+			z-index: -1
+			transition: .3s ease
+			+gpu
+			&::after
+				pointer-events: none
+				+coverdiv
+				background: rgba($orange, .9)
+				content: ''
+		&_height
+			min-height: 138px
+			+md
+				min-height: 138px
+			
+/* ===================================
+	 awards-block
+	 =================================== */
+.awards-block
+	position: relative
+	padding: 77px 0 90px
+	+sm
+		padding: 70px 0 50px
+	+xs
+		padding: 40px 0
+	&__title
+		margin-bottom: 40px
+		text-align: center
+	&__inner
+		display: flex
+		justify-content: space-between
+		+md
+			flex-wrap: wrap
+			justify-content: center
+		+sm
+			justify-content: space-between
+	&__col
+		flex: 0 0 350px
+		+md
+			margin: 0 20px 20px
+		+sm
+			margin: 0 auto 20px
+		+xs
+			flex-basis: 100%
+		&:nth-child(2)
+			+md
+				order: 1
+	&__card
+		display: flex
+		align-items: flex-start
+		padding: 20px 29px 23px
+		background: $white
+		box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+		&:not(:first-child)
+			margin-top: 20px
+		&-img
+			flex: 0 0 97px
+			height: 137px
+			margin-top: 6px
+			margin-right: 18px
+			+cover-img
+		&-text
+			color: $blue-dark
+			line-height: 25px
+			
+/* ===================================
+	 videos
+	 =================================== */
+.videos
+	padding: 80px 0 90px
+	background-color: #f6f6f6
+	+sm
+		padding: 50px 0 10px
+	&__title
+		margin-bottom: 40px
+		+xs
+			margin-bottom: 25px
+			font-size: 35px
+			text-align: center
+	&__inner
+		display: flex
+		margin: 0 -15px
+		+sm
+			flex-wrap: wrap
+	&__item
+		padding: 0 15px
+		flex-basis: 50%
+		width: 50%
+		height: 303px
+		+sm
+			flex-basis: 100%
+			width: 100%
+			padding: 0 15px 30px
+			height: 445px
+		+xs
+			height: 300px
+		iframe
+			width: 100%
+			height: 100%
+	

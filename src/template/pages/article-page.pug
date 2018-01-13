@@ -1,0 +1,50 @@
+extends ../extend/default
+
+block variables
+	-title = 'Арбитражный процес'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'СТАТЬИ', 'АРБИТРАЖНЫЙ ПРОЦЕС']
+		-activeIndex = 3
+		-pageInfo = {title: 'АРБИТРАЖНЫЙ ПРОЦЕС'}
+		include ../components/page-info
+
+		//begin grid
+		+b.grid(data-fade-on-scroll)
+			.container
+				+e.row
+					+e.main
+						-
+							article = {
+							title: 'Право на иск в арбитражном суде: общие правила искового производства'}
+						include ../components/article
+					+e.ASIDE.side
+						//begin read
+						+b.read._article
+							+e.H3.title.title-sm Читайте так же:
+							-cardsCount = 4
+							-
+								eventCardList = [{
+								classMod: '_side',
+								date: '05.07',
+								hashTag: '#налоги и право',
+								descr: 'Все изменения Федерального Закона РФ “Об автомобильных дорогах и о дорожной деятельности”',
+								readLink: 'Читать'
+								}]
+							include ../components/event-card
+
+						+b.track-news
+							+e.H3.title.title-xs Следите за новостями
+							-socialsClass = '_gray track-news__socials'
+							include ../components/socials
+							+e.BUTTON.subs-btn.btn(type='button') подписаться
+
+
+		//begin ask
+		+b.SECTION.ask(data-fade-on-scroll)
+			+e.container.container
+				+e.A.title.title-md._white(href='#!') Остались вопросы?

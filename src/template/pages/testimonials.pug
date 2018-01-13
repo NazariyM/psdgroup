@@ -1,0 +1,88 @@
+extends ../extend/default
+
+block variables
+	-title = 'Отзывы клиентов'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'отзывы клиентов']
+		-activeIndex = 2
+		-pageInfo = {title: 'отзывы клиентов'}
+		include ../components/page-info
+
+		//begin testimonials
+		+b.SECTION.testimonials
+			+e.container.container
+
+				+e.item(data-fade-delay)
+					+e.item-in
+						+e.item-img-wrap
+							+e.IMG(src='static/img/content/testimon-1.png' alt='image')
+						+e.item-text
+							+e.item-text-in
+								+e.item-title ООО ЗАО “Лион”
+								+e.P.item-descr Очень благодарна вашей компании, нашла у вас прекрасного юриста, который помог вернуть деньги за заказанный товар! Потеряла надежду вернуть свои деньги после неудачной покупки телефона в очень непорядочной организации - интернет-магазин по продаже мобильных телефонов. История длилась 2 месяца. Телефон оказался неисправен, но мне никто и не пытался вернуть деньги за него (хотя неисправность была определена сразу и телефон был сдан через 3 дня после покупки).
+									+i('quotes')
+								+e.item-actions
+									+e.A.item-link.link(href='#!')
+										+e.SPAN оригинал отзывы
+									+e.A.item-link.link._color(href='#!')
+										+e.SPAN читать полностью
+										+i('arr_r')
+
+				+e.item._img-right(data-fade-delay)
+					+e.item-in
+						+e.item-img-wrap
+							+e.IMG(src='static/img/content/testimon-2.png' alt='image')
+						+e.item-text
+							+e.item-title ООО ЗАО “Лион”
+							+e.P.item-descr Очень благодарна вашей компании, нашла у вас прекрасного юриста, который помог вернуть деньги за заказанный товар! Потеряла надежду вернуть свои деньги после неудачной покупки телефона в очень непорядочной организации - интернет-магазин по продаже мобильных телефонов. История длилась 2 месяца. Телефон оказался неисправен, но мне никто и не пытался вернуть деньги за него (хотя неисправность была определена сразу и телефон был сдан через 3 дня после покупки).
+								+i('quotes')
+							+e.item-actions
+								+e.A.item-link.link(href='#!')
+									+e.SPAN оригинал отзывы
+								+e.A.item-link.link._color(href='#!')
+									+e.SPAN читать полностью
+									+i('arr_r')
+
+				+e.item(data-item='hidden')
+					+e.item-in
+						+e.item-img-wrap
+							+e.IMG(src='static/img/content/testimon-1.png' alt='image')
+						+e.item-text
+							+e.item-text-in
+								+e.item-title ООО ЗАО “Лион”
+								+e.P.item-descr Очень благодарна вашей компании, нашла у вас прекрасного юриста, который помог вернуть деньги за заказанный товар! Потеряла надежду вернуть свои деньги после неудачной покупки телефона в очень непорядочной организации - интернет-магазин по продаже мобильных телефонов. История длилась 2 месяца. Телефон оказался неисправен, но мне никто и не пытался вернуть деньги за него (хотя неисправность была определена сразу и телефон был сдан через 3 дня после покупки).
+									+i('quotes')
+								+e.item-actions
+									+e.A.item-link.link(href='#!')
+										+e.SPAN оригинал отзывы
+									+e.A.item-link.link._color(href='#!')
+										+e.SPAN читать полностью
+										+i('arr_r')
+
+				+e.item._img-right(data-item='hidden')
+					+e.item-in
+						+e.item-img-wrap
+							+e.IMG(src='static/img/content/testimon-2.png' alt='image')
+						+e.item-text
+							+e.item-title ООО ЗАО “Лион”
+							+e.P.item-descr Очень благодарна вашей компании, нашла у вас прекрасного юриста, который помог вернуть деньги за заказанный товар! Потеряла надежду вернуть свои деньги после неудачной покупки телефона в очень непорядочной организации - интернет-магазин по продаже мобильных телефонов. История длилась 2 месяца. Телефон оказался неисправен, но мне никто и не пытался вернуть деньги за него (хотя неисправность была определена сразу и телефон был сдан через 3 дня после покупки).
+								+i('quotes')
+							+e.item-actions
+								+e.A.item-link.link(href='#!')
+									+e.SPAN оригинал отзывы
+								+e.A.item-link.link._color(href='#!')
+									+e.SPAN читать полностью
+									+i('arr_r')
+
+
+				+e.BUTTON.show-btn.btn.js-show-btn(type='button') ПОКАЗАТЬ ЕЩЕ
+
+		//begin ask
+		+b.SECTION.ask(data-fade-on-scroll)
+			+e.container.container
+				+e.A.title.title-md._white(href='#!') Остались вопросы?

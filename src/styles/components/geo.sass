@@ -1,0 +1,63 @@
+.geo
+	position: relative
+	&__title
+		position: absolute
+		top: 74px
+		left: 31.4%
+		z-index: 1
+		transform: translateX(-50%)
+		pointer-events: none
+		+sm
+			top: 33px
+			left: 0
+			right: 0
+			padding: 0 10px
+			text-align: center
+			transform: none
+		+xs
+			font-size: 37px
+	&__map
+		height: 700px
+		+sm
+			height: 500px
+	&__box
+		width: 340px
+		min-height: 250px
+		padding: 33px 22px 20px 82px
+		box-sizing: border-box
+		background: url("../img/icons/shield_black.png") no-repeat 32px 28px
+		animation: scaleIn .6s ease
+		+xs
+			width: 300px
+			min-height: 200px
+			padding: 25px 10px 20px 80px
+		&-title
+			margin-bottom: 3px
+			+f('pn-600', 18, 28)
+			color: $blue-dark
+		&-descr
+			margin-bottom: 15px
+			+f('pn-400', 15, 25)
+			color: #717171
+		&-btn
+			padding: 0 30px
+			height: 35px
+			line-height: 37px
+			font-size: 13px
+			
+.ymaps-2-1-53-balloon,
+.ymaps-2-1-55-balloon
+	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)!important
+.ymaps-2-1-53-balloon__layout,
+.ymaps-2-1-55-balloon__layout
+	background: rgba(#fff, .8)!important
+.ymaps-2-1-53-balloon__content,
+.ymaps-2-1-55-balloon__content
+	padding: 0!important
+	background: rgba(#fff, .8)!important
+.ymaps-2-1-53-balloon_to_top .ymaps-2-1-53-balloon__tail,
+.ymaps-2-1-55-balloon_to_top .ymaps-2-1-53-balloon__tail
+	display: none
+.ymaps-2-1-53-copyrights-pane,
+.ymaps-2-1-55-copyrights-pane
+	display: none

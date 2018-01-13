@@ -1,0 +1,524 @@
+/* ===================================
+	 quick-info
+	 =================================== */
+.quick-info
+	position: relative
+	padding: 73px 0
+	+md
+		padding: 50px 0
+	+sm
+		padding: 0
+	
+	&__container
+		display: flex
+		max-width: 1130px
+		+sm
+			flex-direction: column
+		
+/* ===================================
+	 about-block
+	 =================================== */
+.about-block
+	flex: 0 1 58%
+	+sm
+		flex: 1 1 100%
+		padding: 65px 50px
+	+xs
+		padding: 40px 0
+	&__inner
+	
+	&__title
+		margin-bottom: 38px
+		+sm
+			text-align: center
+	&__row
+		display: flex
+		justify-content: space-between
+		margin: 0 -15px 33px
+		max-width: 670px
+		+md
+			margin: 0 -15px 20px
+		+sm
+			margin: 0 auto 20px
+		+xs
+			margin: 0 -15px 0
+			max-width: none
+			flex-wrap: wrap
+			justify-content: center
+	&__item
+		padding: 0 15px
+		text-align: center
+		+sm
+			padding: 0 10px
+		+xs
+			min-width: 160px
+			margin: 0 0 30px
+		&-count
+			margin-bottom: 13px
+			font-size: 62px
+			line-height: 50px
+			color: $orange
+		&-text
+			max-width: 140px
+			margin: 0 auto
+			font-size: 16px
+			line-height: 22px
+			color: $black
+	&__descr
+		max-width: 640px
+		+sm
+			margin: 0 auto
+		p
+			+f('pn-300', 17, 28)
+			color: #717171
+		strong
+			+f('pn-600')
+			color: #1b1e28
+
+/* ===================================
+	 events
+	 =================================== */
+.events
+	position: absolute
+	top: 0
+	left: 59.3%
+	right: 0
+	bottom: 0
+	padding: 80px 20px 80px 65px
+	background: #fc5832
+	z-index: 1
+	+md
+		padding: 50px 20px 50px 55px
+	+sm
+		position: relative
+		flex-basis: 100%
+		top: auto
+		left: auto
+		right: auto
+		bottom: auto
+		margin: 0 -15px
+		padding: 65px
+	+xs
+		margin: 0 -10px
+		padding: 40px 10px
+	&__inner
+		max-width: 350px
+		+sm
+			max-width: none
+	&__col
+		+sm
+			text-align: right
+		+sm
+			text-align: center
+	&__title
+		margin-bottom: 26px
+		+sm
+			text-align: center
+	&__item
+		display: flex
+		color: $white
+		text-align: left
+		&:not(:first-child)
+			margin-top: 33px
+			+sm
+				margin-top: 15px
+		&:nth-child(2)
+			max-width: 335px
+			+sm
+				max-width: none
+		&-date
+			+f('pn-700', 22, 30)
+		&-text
+			padding-left: 20px
+			+f('pn-300', 16, 25)
+			+xs
+				padding-left: 13px
+			a
+				+trs
+				border-bottom: 1px solid transparentize($white, .6)
+				.no-touch &:hover
+					border-bottom-color: $white
+	&__watch-btn
+		margin-top: 42px
+	&__bg
+		+coverdiv
+		+cover
+		opacity: .1
+		z-index: -1
+
+/* ===================================
+	 directions
+	 =================================== */
+.directions
+	position: relative
+	padding: 74px 0 90px
+	background-color: #f6f6f6
+	z-index: 2
+	+xs
+		padding: 40px 0
+	.line
+		top: -50px
+	&__container
+		position: relative
+		max-width: 1170px
+		text-align: center
+		z-index: 10
+		+xs
+			padding: 0
+	&__title
+		margin-bottom: 50px
+		+sm
+			margin-bottom: 35px
+		+xs
+			margin-bottom: 25px
+			font-size: 37px
+			line-height: 35px
+	&__all-btn
+		margin-top: 40px
+		
+.directions-block
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	z-index: 1
+	$parent: &
+	+sm
+		flex-wrap: wrap
+	.no-touch &:hover::after
+		opacity: 0
+	&::after
+		pointer-events: none
+		+coverdiv
+		content: ''
+		opacity: .3
+		background: url("../img/bg/cross_bg.png") no-repeat 50% 50%
+		z-index: 1
+		transition: opacity 1.2s ease
+		+sm
+			display: none
+	&__item
+		position: relative
+		flex: 1 1 25%
+		height: 220px
+		background: #1b1e28
+		color: $white
+		+cover-img
+		text-align: center
+		cursor: default
+		z-index: 1
+		+sm
+			flex: 1 1 33.333333%
+		+xs
+			flex: 1 1 50%
+			min-width: 285px
+		&:hover
+			z-index: 2
+		&:hover img
+			opacity: .1
+		&:hover &-inner
+			align-items: flex-start
+			top: -15px
+			left: -45px
+			right: -45px
+			bottom: -40px
+			background: $orange
+			+md
+				left: -20px
+				right: -20px
+			&::before
+				display: none
+		&:hover &-title
+			padding: 40px 0 0
+			vertical-align: top
+			max-width: none
+			line-height: 30px
+			&_big
+				padding: 20px 0 0
+		&:hover &-hidden
+			position: static
+			transform: scaleX(1)
+			transition-delay: .15s
+			transition-duration: .3s
+			opacity: 1
+		&-inner
+			overflow: hidden
+			+coverdiv
+			z-index: 5
+			transition: .3s ease
+			+gpu
+			+vertical
+		img
+			position: absolute
+			top: 0
+			left: 0
+			z-index: -1
+			opacity: .3
+		&-hidden
+			position: absolute
+			transform: scaleX(.5)
+			opacity: 0
+			will-change: transform
+		&-title
+			display: inline-block
+			vertical-align: middle
+			max-width: 240px
+			margin: 0 auto
+			z-index: 3
+			line-height: 34px
+		&-text
+			max-width: 270px
+			margin: 13px auto 22px
+			+f('pn-300', 16, 26)
+		&-more-btn
+			padding: 0 30px
+			height: 35px
+			line-height: 35px
+			font-size: 13px
+			+gpu
+	
+	&_home &__item:nth-child(4) ~:hover .directions-block__item-inner
+		top: -40px
+		bottom: -15px
+	
+	&_services
+		margin: 0 -15px
+		background: $white
+	&_services &__item
+		flex: 1 1 20%
+		margin: 0 15px 30px
+		height: 200px
+		+md
+			margin: 0 5px 10px
+		+sm
+			flex: 1 1 33.33333%
+		+xs
+			flex: 1 1 100%
+	&_services &__item:hover #{$parent}__item-inner
+		top: -45px
+		bottom: -30px
+		left: -60px
+		right: -60px
+
+/* ===================================
+	 analytics
+	 =================================== */
+.analytics
+	position: relative
+	padding: 74px 0 89px
+	background: #f6f6f6
+	+xs
+		padding: 50px 0
+	&__container
+		position: relative
+		text-align: center
+	&__inner
+		display: flex
+		margin: 0 -15px
+		+md
+			margin: 0 -12px
+		+sm
+			flex-wrap: wrap
+			margin: 0 -10px
+	&__col
+		flex: 1 1 33.33333%
+		padding: 0 15px
+		+md
+			padding: 0 6px
+		+sm
+			padding: 0 10px
+		+xs
+			flex: 1 1 100%
+		&:not(:first-child)
+			+sm
+				margin-top: 20px
+		&:nth-child(1)
+			+sm
+				flex: 1 1 100%
+	&__col .event-card:last-child
+		margin-bottom: 0
+	&__title
+		margin-bottom: 50px
+		+xs
+			margin-bottom: 30px
+	&__cards
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		flex: 1 1 auto
+		margin: 0 15px
+		
+/* ===================================
+	 projects
+	 =================================== */
+.projects
+	position: relative
+	padding: 74px 0 94px
+	+sm
+		padding: 70px 0 60px
+	+xs
+		padding: 50px 0
+	&__container
+		text-align: center
+	&__top
+		display: flex
+		margin-bottom: 36px
+		+xs
+			flex-wrap: wrap
+			justify-content: center
+	&__title
+		margin-right: 46px
+		+xs
+			flex: 1 1 100%
+			margin: 0 0 15px
+	&__cards
+		display: flex
+		margin: 0 -15px 40px
+		+md
+			margin: 0 -12px 40px
+		+sm
+			flex-wrap: wrap
+			margin: 0 -10px 20px
+		&-col
+			padding: 0 15px
+			+md
+				padding: 0 6px
+			+sm
+				flex: 1 1 50%
+				padding: 0 10px 20px
+	
+	&__all-btn
+	&__select
+		flex: 0 0 300px
+		padding-top: 4px
+		
+/* ===================================
+	 cooperation
+	 =================================== */
+.cooperation
+	padding: 74px 0
+	background: #f6f6f6
+	+xs
+		padding: 40px 0
+	&__container
+		display: flex
+		max-width: 1170px
+		+sm
+			flex-wrap: wrap
+	&__col
+		flex: 1 1 50%
+		width: 50%
+		+sm
+			flex: 1 1 100%
+			width: 100%
+			&:not(:first-child)
+				padding-top: 45px
+				
+/* ===================================
+	 coop-block
+	 =================================== */
+.coop-block
+	text-align: center
+	$P: &
+	&__title
+		margin-bottom: 27px
+	&__inner
+		display: flex
+		flex-wrap: wrap
+	&__item
+		position: relative
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		flex: 1 0 50%
+		padding: 25px 0
+		+xs
+			min-width: 250px
+		&-inner
+			position: relative
+			&:hover  #{$P}__item-img-color
+				opacity: 1
+			&:hover #{$P}__item-actions
+				opacity: 1
+				pointer-events: auto
+				transform: scaleY(1) translateX(-50%)
+			&:hover #{$P}__item-img-color
+				z-index: 2
+				opacity: 1
+				transform: scaleY(1)
+		&-img-color
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-size: contain
+			background: no-repeat 50% 50%
+			z-index: -1
+			transition: opacity .35s ease .1s, transform .35s ease .1s
+			opacity: 0
+			transform: scaleY(.5)
+		&-link
+			display: inline-block
+			margin-bottom: 15px
+			color: $blue-dark
+			font-size: 18px
+			line-height: 22px
+			text-decoration: underline
+			.no-touch &:hover
+				text-decoration: none
+		&-btn
+			padding: 0 32px
+		&-actions
+			position: absolute
+			width: 296px
+			height: 220px
+			top: -44px
+			left: 50%
+			z-index: 1
+			padding-top: 110px
+			opacity: 0
+			box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+			background: rgba(#fff, .9)
+			transition: .35s ease
+			background: $white
+			pointer-events: none
+			transform: scaleY(.5) translateX(-50%)
+			
+/* ===================================
+	 ask
+	 =================================== */
+.ask
+	padding: 35px 0
+	background: $blue-dark
+	text-align: center
+	&__title
+		position: relative
+		display: inline-block
+		font-size: 40px
+		transition: .5s ease
+		+xs
+			font-size: 31px
+			line-height: 50px
+		.no-touch &:hover
+			color: $orange
+		&::after, &::before
+			content: ''
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 4px
+			height: 1px
+			background: rgba(#fff, .4)
+			transition: .5s ease
+			
+		.no-touch &:hover::after
+			left: 50%
+		.no-touch &:hover::before
+			right: 50%
+		.no-touch &:hover::after,
+		.no-touch &:hover::before
+			background: $orange
+			
+
+	

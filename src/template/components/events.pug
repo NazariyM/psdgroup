@@ -1,0 +1,19 @@
+if events ? events : events = []
+if events.title ? events.title : events.title = ['События']
+-eventsDate = ['05.07', '23.06']
+-eventsText = ['Все изменения Федерального Закона РФ “Об автомобильных дорогах и о дорожной деятельности”', 'Порядок обжалования решений федеральных учреждений медико-социальной экспертизы, осуществляющих признание лица инвалидом.']
+
+//begin events
++b.SECTION.events(class= events.classMod ? events.classMod : '')
+	+e.inner
+		+e.H3.title.title-md._white= events.title
+		+e.col
+			mixin evItem(item)
+				+e.item
+					+e.item-date= eventsDate[item]
+					+e.P.item-text
+						+e.A(href='#!')= eventsText[item]
+			each el, item in eventsDate
+				+evItem(item)
+			+e.A.watch-btn.btn._white(href='#!') СМОТРЕТЬ ЕЩЕ
+	+e.bg(style = 'background-image: url(static/img/bg/events_bg.jpg)')

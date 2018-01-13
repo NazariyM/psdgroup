@@ -1,0 +1,41 @@
+if coopBlock ? coopBlock : coopBlock = []
+
+//begin coop-block
+mixin coopBlock(el)
+	+b.coop-block(class= el.classMod ? el.classMod : '')
+		+e.H3.title.title-md= el.title
+		+e.inner
+			+e.item
+				+e.item-inner
+					+e.IMG.item-img(src=`static/img/content/logo-1.png` alt='img')
+					+e.DIV.item-img-color(style=`background-image: url(static/img/content/logo-1_color.png)`)
+					+e.DIV.item-actions
+						+e.A.item-link(href='#!') http://sberbank.ru
+						+e.A.item-btn.btn._black(href='#!') Смотреть кейс
+
+			+e.item
+				+e.item-inner
+					+e.IMG.item-img(src=`static/img/content/logo-2.png` alt='img')
+					+e.DIV.item-img-color(style=`background-image: url(static/img/content/logo-2_color.png)`)
+					+e.DIV.item-actions
+						+e.A.item-link(href='#!') http://sberbank.ru
+						+e.A.item-btn.btn._black(href='#!') Смотреть кейс
+
+			+e.item
+				+e.item-inner
+					+e.IMG.item-img(src=`static/img/content/logo-3.png` alt='img')
+					+e.DIV.item-img-color(style=`background-image: url(static/img/content/logo-3_color.png)`)
+					+e.DIV.item-actions
+						+e.A.item-link(href='#!') http://sberbank.ru
+						+e.A.item-btn.btn._black(href='#!') Смотреть кейс
+
+			+e.item
+				+e.item-inner
+					+e.IMG.item-img(src=`static/img/content/logo-4.png` alt='img')
+					+e.DIV.item-img-color(style=`background-image: url(static/img/content/logo-4_color.png)`)
+					+e.DIV.item-actions
+						+e.A.item-link(href='#!') http://sberbank.ru
+						+e.A.item-btn.btn._black(href='#!') Смотреть кейс
+
+each el in coopBlock
+	+coopBlock(el)

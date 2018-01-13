@@ -1,0 +1,228 @@
+extends ../extend/default
+
+block variables
+	-title = 'Услуги'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'Услуги']
+		-activeIndex = 2
+		-
+			pageInfo = {title: 'Услуги'}
+		include ../components/page-info
+
+		//begin services
+		+b.SECTION.services(data-fade-on-scroll)
+			+e.container.container
+				// begin tabs
+				+b.c-tabs
+					+e.tabs-nav
+						+e.tabs-el.is-active для физических лиц
+						+e.tabs-el для юридических лиц и ИП
+					+e.tabs-for
+						+e.tab
+							// begin directions-block
+							+b.directions-block._services
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Уголовное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-1.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Наследственное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-2.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Миграционное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-3.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Страховое
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-4.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Налоговое
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-5.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Трудовое
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-6.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Гражданское
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-7.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title._big.title-xs._white Исполнение судебных решений
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-8.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Уголовное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-1.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Наследственное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-2.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Миграционное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-3.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Страховое
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-4.jpg` alt='img')
+
+
+						+e.tab
+							// begin directions-block
+							+b.directions-block._services
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Уголовное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-1.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Наследственное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-2.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Миграционное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-3.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Страховое
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-4.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Налоговое
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-5.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Трудовое
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-6.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Гражданское
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-7.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title._big.title-xs._white Исполнение судебных решений
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-8.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Уголовное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-1.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Наследственное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-2.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Миграционное
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-3.jpg` alt='img')
+
+								+e.item
+									+e.item-inner
+										+e.H5.item-title.title-xs._white Страховое
+										+e.item-hidden
+											+e.P.item-text Наследственное право регулирует переход имущественных прав и обязанностей от умершего человека к его преемникам.
+											+e.A.item-more-btn.btn._white(href='#!') подробнее
+										+e.IMG(src=`static/img/bg/directions-4.jpg` alt='img')
+
+		//begin ask
+		+b.SECTION.ask(data-fade-on-scroll)
+			+e.container.container
+				+e.A.title.title-md._white(href='#!') Остались вопросы?

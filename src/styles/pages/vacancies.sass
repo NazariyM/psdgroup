@@ -1,0 +1,131 @@
+.vacancy
+	padding: 70px 0 35px
+	$parent: &
+	+md
+		padding: 60px 0
+	+xs
+		padding: 40px 0
+	&__item
+		&:not(:first-child)
+			margin-top: 50px
+			padding: 35px 0 0
+			border-top: 1px solid #f0f1f1
+			+sm
+				margin-top: 30px
+				padding: 20px 0 0
+		&.is-open #{$parent}__title span
+			border-bottom-color: transparent
+	&__title
+		display: inline-block
+		font-size: 35px
+		text-transform: uppercase
+		cursor: pointer
+		+xs
+			font-size: 28px
+			line-height: 38px
+		span
+			border-bottom: 1px solid rgba($blue-dark, .5)
+			+trs
+	&__details
+		padding-top: 15px
+		&-in
+			display: flex
+			align-items: flex-start
+			margin: 0 -15px
+			+md
+				flex-wrap: wrap
+				margin: 0
+				
+	&__block
+		flex: 0 0 calc(50% - 30px)
+		width: calc(50% - 30px)
+		//flex: 0 0 calc(33.333333% - 30px)
+		//width: calc(33.333333% - 30px)
+		margin: 0 15px
+		+md
+			flex: 0 1 calc(50% - 30px)
+		+sm
+			flex: 1 1 100%
+			&:not(:first-child)
+				margin-top: 20px
+		&-title
+			margin-bottom: 11px
+			+f('pn-600', 20, 28)
+			
+		&-list
+			li
+				position: relative
+				padding-left: 20px
+				+f('pn-300', 17,28)
+				color: #717171
+				&:not(:first-child)
+					margin-top: 11px
+				.icon-shield_xs
+					position: absolute
+					top: 5px
+					left: 1px
+					fill: $blue-dark
+					font-size: 16px
+					+gpu
+					+sm
+						top: 7px
+		&-salary
+			font-size: 20px
+			&-count
+				display: flex
+				align-items: center
+				justify-content: center
+				+f('pn-600', 20)
+				span
+					margin: 0 13px
+					+f('pn-900', 45)
+					color: $orange
+			&-descr
+				+f('pn-300', 17)
+				color: #717171
+		&_striped
+			padding: 28px 6px 28px
+			margin-top: 10px
+			border: 5px solid
+			border-image: repeating-linear-gradient(-45deg, transparent 10px, rgba(255, 0, 0, 0.8) 0, rgba(255, 0, 0, 0.8) 18px, transparent 0, transparent 25px) 5
+			background: $white
+			text-align: center
+			+md
+				flex: 1 1 auto
+				margin: 25px 15px 0
+				padding: 15px 0
+			#{$parent}__block-title
+				margin-bottom: 5px
+	
+	&__actions
+		display: flex
+		justify-content: space-between
+		margin: 30px 0 0
+		+sm
+			align-items: center
+		+xs
+			flex-direction: column
+		&-submit
+			+xs
+				order: 1
+				margin-top: 15px
+			
+				
+/* ===================================
+	 vac-subscr
+	 =================================== */
+.vac-subscr
+	padding: 35px 0
+	background-color: #1b1e28
+	&__container
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__title
+		color: $white
+	&__form
+		display: flex
+		flex: 0 0 495px
+		&-field
+			flex: 0 0 310px
+			margin-right: 10px

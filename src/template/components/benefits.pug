@@ -1,0 +1,34 @@
+if benefits ? benefits : benefits = []
+if benefits.title ? benefits.title : benefits.title = 'Преимущества'
+-
+	benefitsList = [{
+	icon: 'scales',
+	title: 'Экспертность',
+	text: 'Одни из 1х начали проводить процедуру банкротства юр. лиц'
+	},{
+	icon: 'like',
+	title: 'Результат',
+	text: 'Мы 100% гарантируем результат своей работы и прописываем это в договоре'
+	},{
+	icon: 'case',
+	title: 'Опыт',
+	text: 'Провели 58 процедур банкротсва юр. лиц, среднее списание долга 1 300 000 р. за одну процедуру'
+	},{
+	icon: 'user',
+	title: 'Команда',
+	text: '8 профессиональных юристов только по банкротству и 3 своих финансовых управляющих'
+	}]
+
+//begin benefits
++b.SECTION.benefits(class= benefits.classMod ? benefits.classMod : '')
+	+e.container.container
+		+e.H3.title.title-md= benefits.title
+		+e.inner
+			mixin benefitsItem(item)
+				+e.item(data-fade-delay)
+					+e.item-icon
+						+i(`${item.icon}`)
+					+e.H5.item-title.title-xs= item.title
+					+e.P.item-text= item.text
+			each item in benefitsList
+				+benefitsItem(item)

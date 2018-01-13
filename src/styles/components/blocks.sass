@@ -1,0 +1,443 @@
+/* ===================================
+	 calendar
+	 =================================== */
+.calendar
+	&_side
+		+ .flatpickr-calendar
+			width: 100%
+			.flatpickr-rContainer
+				width: 100%
+			.flatpickr-month
+				display: flex
+				align-items: center
+				height: 70px
+				background: #f7f7f7
+			.flatpickr-day.selected
+				background: $blue-dark
+				color: $white
+				border: 0
+			.flatpickr-day.prevMonthDay,
+			.flatpickr-day.nextMonthDay
+				color: rgba($blue-dark, .3)
+			.flatpickr-current-month
+				font-size: inherit
+			.flatpickr-current-month span.cur-month,
+			.flatpickr-current-month input.cur-year
+				text-transform: uppercase
+				+f('pn-700', 15, 15)
+			.flatpickr-prev-month,
+			.flatpickr-next-month
+				top: calc(35% - 7px)
+			.flatpickr-prev-month
+				left: 15px
+			.flatpickr-next-month
+				right: 15px
+			.flatpickr-prev-month svg, .flatpickr-next-month svg
+				width: 18px
+			span.flatpickr-weekday
+				text-transform: uppercase
+				+f('pn-700', 12)
+			.flatpickr-days
+				width: 255px
+			.flatpickr-weekdays
+				padding: 22px 7px 7px
+			.dayContainer
+				padding: 5px
+				width: 255px
+				min-width: 255px
+				max-width: 255px
+			.flatpickr-day
+				margin: 3px
+				height: 26px
+				flex-basis: 26px
+				width: 26px
+				line-height: 26px
+				+f('pn-700', 12)
+				color: $blue-dark
+				&.today
+					background: $orange
+					border: 0
+					color: $white
+			&:before,
+			&:after
+				display: none
+				
+/* paritcles
+	----------------------------------- */
+.particles
+	+coverdiv
+	z-index: 1
+	+nosel
+	
+/* ===================================
+	 ohter styles
+	 =================================== */
+.line
+	position: absolute
+	left: calc(50% - 1px)
+	bottom: -50px
+	height: 100px
+	width: 2px
+	z-index: 5
+	pointer-events: none
+	+xs
+		display: none
+	&::after, &::before
+		content: ''
+		position: absolute
+		left: 0
+		right: 0
+	&::after
+		background: #e1e1e1
+		height: 50%
+		bottom: 0
+	&::before
+		top: 0
+		height: 50%
+		background: #ff5243
+	&_color
+		&::after
+			background: $orange
+		&::before
+			background: #e1e1e1
+	&_top
+		top: -50px
+		left: 21.7%
+
+.line-long
+	position: absolute
+	right: 50px
+	top: 0
+	bottom: 0
+	z-index: 5
+	width: 1px
+	background-color: #d0d1d2
+	+md
+		display: none
+	&__indicator
+		position: absolute
+		top: 158px
+		padding-left: 5px
+		left: 2px
+		height: 158px
+		color: #fe6255
+		font-size: 13px
+		+f('pn-700')
+		writing-mode: vertical-lr
+		box-shadow: -3px 0 0 #fe6255
+		text-align: center
+		&::after, &::before
+			content: ''
+			position: absolute
+			left: -7px
+			width: 12px
+			height: 1px
+			background-color: #fe6255
+		&::before
+			top: 0
+		&::after
+			bottom: 0
+			
+/* ===================================
+	 subs-block
+	 =================================== */
+.subs-block
+	padding: 15px 45px 36px
+	height: 100%
+	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+	border: 5px solid
+	border-image: repeating-linear-gradient(-45deg, transparent 10px, rgba(255, 0, 0, 0.8) 0, rgba(255, 0, 0, 0.8) 18px, transparent 0, transparent 25px) 5
+	background: $white
+	$parent: &
+	+md
+		padding: 30px 35px 36px
+	+sm
+		max-width: 600px
+		margin: 0 auto
+		padding: 15px 70px 25px
+	+xs
+		padding: 15px 10px 25px
+	&__descr
+		max-width: 200px
+		margin: 3px auto 15px
+		font-size: 16px
+		line-height: 22px
+		color: #717171
+		+sm
+			max-width: none
+		br
+			+sm
+				display: none
+			+xs
+				display: block
+	&__form
+		max-width: 240px
+		+md
+			max-width: none
+		&-field
+			&:not(:first-child)
+				margin-top: 12px
+	
+	&__sub-descr
+		margin: 18px 0 25px
+		padding: 0 10px
+		font-size: 15px
+		line-height: 20px
+		color: transparentize(#717171, .5)
+		+md
+			padding: 0
+			margin: 18px -10px 25px
+		+xs
+			margin: 15px 0
+	
+	&_small
+		margin-bottom: 20px
+		padding: 9px 18px 25px
+		height: auto
+		text-align: center
+		+md
+			width: 50%
+		+sm
+			width: 100%
+			order: 1
+			max-width: none
+			margin-top: 30px !important
+	&_small #{$parent}__sub-descr
+		margin: 10px 0 15px
+	&_small #{$parent}__send-btn
+		height: 35px
+		line-height: 35px
+		font-size: 13px
+	&_small .checkbox__text
+		padding-left: 16px
+		
+/* ===================================
+	 tags
+	 =================================== */
+.tags
+	margin-bottom: 30px
+	padding: 15px 0 0
+	$parent: &
+	&__title
+		font-size: 30px
+	&__list
+		margin-top: 7px
+		font-size: 0
+		&-item
+			display: inline-block
+			vertical-align: top
+			margin: 5px 0
+			&.is-active #{$parent}__list-link
+				pointer-events: none
+				background: $orange
+				color: $white
+			&:not(:last-child)
+				margin-right: 8px
+		&-link
+			display: block
+			padding: 9px 14px
+			+f('pn-700', 11)
+			text-transform: uppercase
+			color: #717171
+			background-color: #d0d1d2
+			border-radius: 30px
+			+trs
+			.no-touch &:hover
+				background: $blue-dark
+				color: $white
+				
+/* ===================================
+	 feed
+	 =================================== */
+.feedback
+	display: flex
+	padding: 38px 20px 33px 0
+	border-top: 1px solid #e8e9e9
+	border-bottom: 1px solid #e8e9e9
+	+xs
+		flex-wrap: wrap
+		padding: 35px 0 30px
+	&__image
+		flex: 0 0 95px
+		width: 95px
+		height: 95px
+		+cover-img
+		+xs
+			margin: 0 auto 15px
+	&__text
+		flex: 1 1 auto
+		padding-left: 20px
+		+xs
+			display: flex
+			flex-direction: column
+			flex: 1 1 100%
+			width: 100%
+			padding-left: 0
+		.rating
+			+xs
+				margin-top: 5px
+				bottom: 5px
+				margin-right: auto
+	&__descr
+		clear: both
+		padding-top: 5px
+		+f('pn-300', 15, 25)
+		color: #717171
+		+xs
+			order: -1
+	&__author
+		margin-top: 5px
+		+f('pn-700', 13, 25)
+		text-transform: uppercase
+		letter-spacing: .03em
+
+/* ===================================
+	 user-feed
+	 =================================== */
+.user-feed
+	padding: 25px 0 0
+	&__title
+		margin-bottom: 5px
+		font-size: 30px
+		+xs
+			text-align: center
+			font-size: 38px
+	&__form
+		+xs
+			display: flex
+			flex-direction: column
+	&__submit-btn
+		margin-top: 20px
+	&__message
+		height: 100px
+		&-wrap
+			clear: both
+			padding-top: 10px
+			+xs
+				margin-bottom: 10px
+				order: -1
+	&__submit-btn
+		padding: 0 30px
+		font-size: 13px
+		+xs
+			margin: 20px auto 0
+/* ===================================
+	 ask-block
+	 =================================== */
+.ask-block
+	position: relative
+	padding: 76px 0 80px
+	background-color: #f6f6f6
+	+xs
+		padding: 45px 0
+	&__container
+		max-width: 766px
+		text-align: center
+	&__title
+		margin-bottom: 32px
+		text-align: center
+		+xs
+			margin-bottom: 15px
+			font-size: 32px
+	&__form
+		&-inner
+			display: flex
+			margin: 0 -10px 23px
+			+xs
+				flex-wrap: wrap
+		&-col
+			margin: 0 10px
+			&:nth-child(1)
+				width: percentage(263 / 736)
+				+xs
+					width: 100%
+			&:nth-child(2)
+				width: percentage(452 / 736)
+				+xs
+					width: 100%
+		&-field
+			&:not(:first-child)
+				margin-top: 15px
+	&__message
+		height: 115px
+		+xs
+			margin-top: 15px
+	&__descr
+		color: #717171
+	&__submit-btn
+		margin-top: 17px
+		padding: 0 29px
+		font-size: 13px
+	
+	.line_top
+		left: calc(50% - 1px)
+		
+// slider arrows default
+.slider-btn
+	position: absolute
+	display: flex
+	align-items: center
+	justify-content: center
+	top: calc(50% - 20px)
+	width: 40px
+	height: 40px
+	background-color: $orange
+	border-radius: 50%
+	z-index: 5
+	padding: 0
+	transition: background .3s ease
+	.no-touch &:hover
+		background: #D32F2F
+	&_prev
+		left: 19.7%
+	&_next
+		right: 19.7%
+	&_prev &__icon
+		right: 1px
+	&_next &__icon
+		left: 2px
+	&__icon
+		position: relative
+		font-size: 20px
+	
+/* ===================================
+	 rating
+	 =================================== */
+.rating
+	float: left
+	+xs
+		float: none
+	&.is-disabled
+		pointer-events: none
+	&__in
+		display: flex
+		flex-direction: row-reverse
+		height: 17px
+		+xs
+			justify-content: center
+	&__input
+		display: none
+	&__input ~ &__icon .icon-star
+		fill: #d0d1d2
+	&__input:checked ~ &-icon .icon-star,
+	&__input:checked &-icon .icon-star
+		fill: $orange
+	&__icon:hover .icon-star,
+	&__icon:hover ~ &__icon .icon-star
+		fill: #cccecf
+	&__input:checked &__icon:hover .icon-star,
+	&__input:checked ~ &__icon .icon-star
+		fill: $orange
+	&__icon
+		cursor: pointer
+		width: 20px
+	.icon-star
+		font-size: 16px
+		
+/* ===================================
+	 archive
+	 =================================== */
+.archive
+	+xs
+		display: none
+	

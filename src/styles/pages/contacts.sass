@@ -1,0 +1,111 @@
+.contacts
+	padding: 90px 0 80px
+	+sm
+		padding: 80px 0 50px
+	+xs
+		padding: 40px 0
+	&__container
+		display: flex
+		+md
+			flex-wrap: wrap
+			justify-content: center
+	&__map
+		flex: 0 0 730px
+		height: 350px
+		box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+		+xs
+			flex: 1 1 100%
+			width: 100%
+	&__contact-info
+		flex: 0 1 auto
+		padding-top: 23px
+		padding-right: 25px
+		+md
+			order: 1
+			padding-right: 0
+			text-align: center
+	&__socials
+		+md
+			justify-content: center
+		
+/* contact-info
+	----------------------------------- */
+.contact-info
+	&__item
+		font-size: 0
+		+xs
+			text-align: left
+		&:not(:first-child)
+			margin-top: 15px
+		.icon
+			width: 40px
+			display: inline-block
+			vertical-align: middle
+			fill: $orange
+			&-loc
+				font-size: 21px
+			&-tel
+				font-size: 20px
+			&-mail
+				font-size: 15px
+	&__text
+		display: inline-block
+		vertical-align: middle
+		width: calc(100% - 40px)
+		font-size: 20px
+		
+	&__link
+		font-size: 20px
+		&-text
+			display: inline-block
+			vertical-align: middle
+			&_font
+				font-size: 25px
+			&_decor
+				+trs
+				border-bottom: 1px solid rgba($blue-dark, .3)
+				.no-touch &:hover
+					border-bottom-color: $blue-dark
+	&__btn
+		margin: 40px 0 30px
+		font-size: 13px
+		
+/* ===================================
+	 questions
+	 =================================== */
+.questions
+	padding: 75px 0 80px
+	background: #f6f6f6
+	+xs
+		padding: 45px 0
+	&__container
+		max-width: 570px
+		text-align: center
+	&__title
+		+xs
+			font-size: 35px
+	&__form
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		margin: 40px 0 0
+		+xs
+			margin: 25px 0 0
+		&-field
+			width: 100%
+			margin-bottom: 15px
+		&-col
+			flex: 0 0 263px
+			margin-bottom: 15px
+			+xs
+				flex: 1 1 100%
+				width: 100%
+		&-message
+			height: 110px
+		&-descr
+			font-size: 15px
+			line-height: 20px
+			color: rgba(113, 113, 113, 0.5)
+		&-btn
+			margin: 5px auto 0
+			font-size: 13px

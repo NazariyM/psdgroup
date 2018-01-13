@@ -1,0 +1,208 @@
+.testimonials
+	padding: 53px 0 50px
+	$parent: &
+	+xs
+		padding: 45px 0
+	&__container
+		text-align: center
+		&_has-slider
+			max-width: 1290px
+	&__inner
+		&:not(:first-child)
+			margin-top: 70px
+	&__title
+		margin-bottom: 20px
+	&__item
+		position: relative
+		padding-top: 40px
+		min-height: 250px
+		+xs
+			padding: 20px 0 0
+		&::after
+			pointer-events: none
+			position: absolute
+			top: 38px
+			left: 15px
+			right: 0
+			bottom: 3px
+			z-index: 0
+			box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+			border-radius: 130px 0 0 130px
+			content: ''
+			+md
+				left: 0
+				border-radius: 130px 0 0 0
+			+sm
+				border-radius: 80px 0 0 0
+			+xs
+				top: 0
+				border-radius: 0
+			 
+		$P: &
+		&:not(:first-child)
+			margin-top: 17px
+			+xs
+				margin-top: 30px
+		&-in
+			display: flex
+			+md
+				display: block
+				+clr
+		&_img-right
+			&::after
+				left: 0
+				right: 15px
+				border-radius: 0 130px 130px 0
+				content: ''
+				+md
+					right: 0
+					border-radius: 0 130px 0 0
+				+sm
+					border-radius: 0 80px 0 0
+				+xs
+					border-radius: 0
+		&_img-right #{$P}-descr .icon
+			+md
+				top: -12px
+				left: 4px
+				font-size: 14px
+		&_img-right #{$P}-in
+			flex-direction: row-reverse
+		&_img-right #{$P}-img-wrap
+			+md
+				float: right
+				margin: -38px 0 0 20px
+			+xs
+				float: none
+				width: 100%
+				padding-top: 300px
+				max-width: 300px
+				margin: 0 auto
+		&_img-right #{$P}-text
+			padding: 22px 0 22px 4px
+			+md
+				padding: 20px 15px 25px 15px
+		&-img-wrap
+			position: relative
+			padding-top: 25.7%
+			flex: 0 1 23.4%
+			margin-top: -38px
+			border-radius: 41%
+			overflow: hidden
+			z-index: 10
+			+md
+				float: left
+				width: 23.4%
+				margin: -38px 20px 0 0
+			+xs
+				float: none
+				width: 100%
+				padding-top: 280px
+				max-width: 300px
+				margin: 0 auto
+			&_sm
+				padding-top: 24%
+			img
+				+coverdiv
+				z-index: 1
+				width: 100%
+				height: 100%
+				object-fit: contain
+				font-family: 'object-fit: contain;'
+		&-text
+			flex: 0 1 76.6%
+			padding: 27px 45px 27px 0
+			background: $white
+			text-align: left
+			+md
+				padding: 20px 15px 25px 15px
+			+xs
+				padding: 20px 10px 30px
+			&-in
+				position: relative
+				z-index: 1
+		&-title
+			margin-bottom: 15px
+			padding-left: 24px
+			+f('pn-700', 20)
+			color: $blue-dark
+			+md
+				text-indent: 25px
+			+xs
+				text-indent: 0
+				text-align: center
+				padding-left: 0
+		&-descr
+			position: relative
+			padding-left: 60px
+			+f('pn-300')
+			line-height: 25px
+			color: #717171
+			+md
+				padding-left: 0
+				text-indent: 25px
+			.icon
+				position: absolute
+				top: 2px
+				left: 26px
+				font-size: 17px
+				+md
+					top: -12px
+					left: 25%
+					font-size: 14px
+				+xs
+					left: 4px
+		&-actions
+			margin-top: 18px
+			padding-left: 28px
+			+md
+				text-align: right
+				padding-left: 0
+				padding-right: 15px
+			+sm
+				margin-top: 5px
+			+xs
+				padding-right: 0
+				text-align: center
+		&-link
+			&:not(:first-child)
+				margin-left: 20px
+				+xs
+					display: block
+					margin-left: 0
+					margin-top: 10px
+	&__show-btn
+		margin-top: 60px
+	&__slider
+		padding: 0 75px
+		+md
+			padding: 0 50px
+		+xs
+			padding: 0
+		#{$parent}__item
+			margin: 0
+			&::after
+				right: 5px
+				+sm
+					right: 2px
+			&-in
+				align-items: flex-end
+			&-img-wrap
+				flex: 0 1 23%
+			&-text
+				+xs
+					padding: 20px 10px 40px
+		.slider-btn
+			top: calc(53% - 20px)
+			+xs
+				top: auto
+				bottom: 10px
+			&_prev
+				left: 5px
+			&_next
+				right: 5px
+				
+	&_service
+		padding: 75px 0 80px
+	&_service &__title
+		margin-bottom: 10px

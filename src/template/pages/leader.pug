@@ -1,0 +1,133 @@
+extends ../extend/default
+
+block variables
+	-title = 'О компании'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'О РУКОВОДИТЕЛЕ']
+		-activeIndex = 2
+		-pageInfo = {title: 'О РУКОВОДИТЕЛЕ'}
+		include ../components/page-info
+
+		//begin lead-info
+		+b.SECTION.lead-info(data-fade-zoom)
+			+e.container.container
+				+e.H2.title.title-md Василий Пашкевич
+				+e.inner
+					+e.text
+						+e.P
+							+e.STRONG (10 мая 1979, Москва)
+							= ' '
+							| - адвокат, управляющий партнёр московской коллегии адвокатов “ALP GROUP”. По данным Интерфакса, известен участием в резонансных уголовных и гражданских делах крупных бизнесменов, VIP-персон из мира политики, шоу-бизнеса, спорта и искусства. В частности представлял интересы Ф. Киркорова, Р. Байсарова, А. Мордашова, Б. Березовского, В. Слуцкера и других публичных персон.
+						+e.P Победитель конкурса “Лидер года” в номинации “Лучший адвокат России 2003 года”
+					+e.img
+						+e.IMG(src='static/img/content/lead.jpg' alt='image')
+
+		//begin graph
+		+b.SECTION.graph(data-fade-zoom)
+			+e.container.container
+				+e.col
+					+e.SPAN.date 1979
+					-
+						graphList = [
+						'Пашкевич Василий Андреевич родился 10 мая 1979 года в с. Камень Лепельского района Витебской области, БССР в многодетной семье!',
+						'В 1996 году закончил среднюю школу и в том же году поступил на судебно- прокурорский факультет Уральской государственной юридической академии.',
+						'В 1997 году переведён в институт прокуратуры УрГЮА, который окончил в 2001 году.']
+					for graphCard in graphList
+						+e.card
+							+e.P.card-text= graphCard
+							+e.card-bg(style='background-image: url(static/img/bg/graph_bg.jpg)')
+
+
+				+e.col
+					+e.SPAN.date 2001-2007
+					-
+						graphList = [
+						'2001 по 2003 год работал следователем и старшим следователем в Чертановской межрайонной прокуратуре г. Москвы.',
+						'С 2003 по 2007 год работал старшим следователем, следователем по особо важным делам и старшим помощником прокурора ЮАО г. Москвы.',
+						'С 2004 по 2005 год возглавлял постоянно действующую следственно-оперативную группу в прокуратуре ЮАО г. Москвы']
+					for graphCard in graphList
+						+e.card
+							+e.P.card-text= graphCard
+							+e.card-bg(style='background-image: url(static/img/bg/graph_bg.jpg)')
+
+
+				+e.col
+					+e.SPAN.date 2007-2010
+					-
+						graphList = [
+						'2007 по 2009 год работал заместителем прокурора в Кузьминской межрайонной прокуратуре г. Москвы.',
+						'С 2009 по 2010 год являлся Помощником руководителя Следственного Управления Следственного комитета при прокуратуре РФ по Московской области по контролю над процессуальной деятельностью отдела по расследованию преступлений коррупционной направленности. Курировал расследование резонансных уголовных дел, в т.ч. о должностных преступлениях...']
+					for graphCard in graphList
+						+e.card._height
+							+e.P.card-text= graphCard
+							+e.card-bg(style='background-image: url(static/img/bg/graph_bg.jpg)')
+
+
+				+e.col
+					+e.SPAN.date 2010-2016
+					-
+						graphList = [
+						'2010 по 2013 год работал заместителем руководителя Следственного отдела по г. Одинцово Главного следственного управления Следственного комитета Российской Федерации по Московской области.',
+						'В 2013 году уволился из правоохранительных органов по собственному желанию.',
+						'С 2016 года по настоящее время является Генеральным директором консалтинговой компании ООО "Комплексная правовая защита".']
+					for graphCard in graphList
+						+e.card._height
+							+e.P.card-text= graphCard
+							+e.card-bg(style='background-image: url(static/img/bg/graph_bg.jpg)')
+
+			+b.line(data-fade-line)
+
+		//begin awards-block
+		+b.SECTION.awards-block(data-fade-on-scroll)
+			+e.container.container
+				+e.H2.title.title-md Награды
+				+e.inner
+					+e.col
+						+e.card
+							+e.card-img
+								+e.IMG(src='static/img/content/awards-block_img.jpg' alt='image')
+							+e.P.card-text За безупречную службу неоднократно поощрялся приказами Прокуратуры г.Москвы, а также Следственного комитета при прокуратуре
+
+						+e.card
+							+e.P.card-text Приказом  от 05.03.2004 г. № 79n за должное и своевременное проведение оперативно-следственных действий на месте по факту взрыва в вагоне электропоезда метрополитена объявлена благодарность;
+
+					+e.col
+						+e.card
+							+e.P.card-text Приказом от 14.04.2004 г. № 130n за грамотно организованную работу оперативно-следственной группы, примерное исполнение служебного долга, профессионализм, проявленный при расследовании уголовного дела о разбойном нападении на инкассаторов Сбербанка Российской Федерации, выдана премия;
+
+						+e.card
+							+e.P.card-text Приказом от 09.01.2007 г. № 1-n за примерное исполнение служебного долга  выдана премия;
+
+					+e.col
+						+e.card
+							+e.card-img
+								+e.IMG(src='static/img/content/awards-block_img.jpg' alt='image')
+							+e.P.card-text Приказом Генерального прокурора Российской Федерации от 27.12.2004 г. № 98-n награжден памятными золотыми часами;
+
+						+e.card
+							+e.P.card-text Приказом Следственного комитета Российской Федерации от 10.01.2012 г. №1-кч за образцовое выполнение служебных обязанностей досрочно присвоено звание подполковника юстиции.
+
+
+
+		//videos
+		+b.SECTION.videos(data-fade-on-scroll)
+			+e.container.container
+				+e.H2.title.title-md Видеоматериалы
+				+e.inner
+					+e.item
+						iframe(src='https://www.youtube.com/embed/mpDdtLEOLck', frameborder='0', allowfullscreen='')
+					+e.item
+						iframe(src='https://www.youtube.com/embed/mpDdtLEOLck', frameborder='0', allowfullscreen='')
+
+			+b.line._top(data-fade-line)
+
+
+		//begin ask
+		+b.SECTION.ask(data-fade-on-scroll)
+			+e.container.container
+				+e.A.title.title-md._white(href='#!') Остались вопросы?

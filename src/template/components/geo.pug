@@ -1,0 +1,9 @@
+if geo ? geo : geo = []
+if geo.title ? geo.title : geo.title = ['География услуг']
+
+//begin geo
++b.SECTION.geo(class= geo.classMod ? geo.classMod : '')
+	+e.H3.title.title-md= geo.title
+	+e.map#map
+	+b.line._top.line(data-fade-line)
+	+b.line.line._color(data-fade-line)

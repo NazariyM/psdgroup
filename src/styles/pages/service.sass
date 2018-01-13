@@ -1,0 +1,244 @@
+/* ===================================
+	 benefits
+	 =================================== */
+.benefits
+	padding: 70px 0 30px
+	+md
+		padding: 50px 0 30px
+	+sm
+		padding: 10px 0 40px
+	&__title
+		+sm
+			text-align: center
+	&__inner
+		display: flex
+		justify-content: center
+		margin: 50px -15px 0
+		+sm
+			flex-wrap: wrap
+	&__item
+		padding: 0 15px
+		flex-basis: 25%
+		width: 25%
+		text-align: center
+		+sm
+			flex-basis: 50%
+			width: 50%
+			margin-bottom: 30px
+		+xs
+			flex-basis: 100%
+			width: 100%
+		&-icon
+			height: 50px
+			.icon
+				position: relative
+			.icon-scales
+				font-size: 40px
+			.icon-like
+				top: -9px
+				font-size: 48px
+			.icon-case
+				font-size: 40px
+			.icon-user
+				top: -9px
+				font-size: 49px
+		&-text
+			padding: 0 8px
+			font-size: 15px
+			line-height: 22px
+			color: $black
+
+/* ===================================
+	 consult
+	 =================================== */
+.consult
+	padding: 47px 0 60px
+	background: $blue-dark
+	+xs
+		padding: 40px 0
+	&__container
+		text-align: center
+		max-width: 846px
+	&__title
+		margin-bottom: 10px
+		color: $white
+	&__descr
+		max-width: 470px
+		margin: 0 auto
+		font-size: 20px
+		color: $white
+	&__form
+		display: flex
+		margin-top: 24px
+		+xs
+			flex-wrap: wrap
+			justify-content: center
+		&-field
+			flex: 1 1 auto
+			margin-right: 10px
+			+xs
+				flex: 1 1 100%
+				width: 100%
+				margin: 0 0 15px
+		&-btn
+			+xs
+				margin-top: 10px
+/* ===================================
+	 expert
+	 =================================== */
+.expert
+	padding: 75px 0 88px
+	$parent: &
+	+xs
+		padding: 45px 0 50px
+	&__row
+		display: flex
+		margin: 0 -10px
+		+sm
+			flex-wrap: wrap
+			justify-content: center
+	&__title
+		max-width: 590px
+		margin: 0 auto 30px
+		text-align: center
+		+xs
+			font-size: 28px
+	&__person
+		display: flex
+		align-items: center
+		padding: 20px 40px
+		box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+		background: $white
+		+sm
+			padding: 25px 15px
+		+xs
+			flex-wrap: wrap
+		&:not(:first-child)
+			margin-top: 33px
+		&-img
+			overflow: hidden
+			width: percentage(271 / 1030)
+			border-radius: 50%
+			+cover-img
+			+xs
+				width: 100%
+				max-width: 270px
+				margin: 0 auto
+		&-text
+			padding-left: 30px
+			width: 72%
+			+xs
+				width: 100%
+				margin-top: 20px
+				padding-left: 0
+		&-info
+			margin-bottom: 10px
+		&-data
+			line-height: 30px
+			&_color
+				color: $orange
+		&-descr
+			margin-bottom: 10px
+			+f('pn-300',17)
+			line-height: 28px
+			color: $black
+		&_in-row
+			padding: 20px 20px 30px
+			flex-direction: column
+			margin: 0 10px
+			width: calc(33.33333% - 20px)
+			flex-basis: calc(33.33333% - 20px)
+			+sm
+				margin: 0 10px 20px
+				width: calc(50% - 20px)
+				flex-basis: calc(50% - 20px)
+			+xs
+				flex-basis: 100%
+				width: 100%
+			&:not(:first-child)
+				margin-top: 0
+		&_in-row #{$parent}__person-img
+			width: 100%
+			margin-bottom: 15px
+			flex-shrink: 0
+		&_in-row #{$parent}__person-info
+			text-align: center
+		&_in-row #{$parent}__person-descr
+			text-indent: 35px
+		&_in-row #{$parent}__person-text
+			display: flex
+			flex-direction: column
+			padding: 0
+			height: 100%
+			width: 100%
+		&_in-row #{$parent}__person-link
+			margin-top: auto
+
+/* ===================================
+	 steps
+	 =================================== */
+.steps
+	padding: 76px 0 80px
+	background: #f6f6f6
+	+xs
+		padding: 50px 0
+	&__container
+		max-width: 800px
+	&__title
+		margin-bottom: 35px
+		padding-right: 20px
+		text-align: center
+		+xs
+			padding-right: 0
+	&__item
+		display: flex
+		align-items: flex-start
+		&:not(:first-of-type)
+			margin-top: 33px
+		&-title
+			margin-bottom: 10px
+			font-size: 20px
+			line-height: 22px
+		&-count
+			flex: 0 0 52px
+			font-size: 62px
+			line-height: 56px
+			color: $orange
+		&-descr
+			line-height: 25px
+		
+
+/* ===================================
+	 services
+	 =================================== */
+.services
+	padding: 80px 0 30px
+	+xs
+		padding: 40px 0
+	&_list
+		padding: 80px 0
+	&_text
+		padding: 80px 0 40px
+
+/* ===================================
+	 serv-list
+	 =================================== */
+.serv-list
+	max-width: 900px
+	margin: 0 auto
+	&__item
+		display: flex
+		align-items: flex-start
+		&:not(:first-child)
+			margin-top: 15px
+		&-link
+			padding-left: 8px
+			font-size: 18px
+			.no-touch &:hover
+				color: $orange
+		.icon
+			flex-shrink: 0
+		&-text
+			padding-left: 8px
+			font-size: 18px
+			

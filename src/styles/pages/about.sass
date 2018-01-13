@@ -1,0 +1,282 @@
+.about
+	padding: 73px 0 0
+	+xs
+		padding: 40px 0
+	&__container
+		max-width: 1520px
+	&__title
+		max-width: 1110px
+		margin: 0 auto 13px
+		+xs
+			margin: 0 auto
+	&__now
+		max-width: 730px
+		margin: 0 auto
+		padding: 24px 38px 32px
+		box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+		+sm
+			max-width: none
+		+xs
+			padding: 24px 20px 20px
+		&-title
+			margin-bottom: 5px
+		&-descr
+			+f('pn-300', 17, 28)
+			color: #717171
+			text-align: justify
+			
+	&__summary
+		max-width: 1110px
+		margin: 50px auto 0
+		+xs
+			margin: 30px auto 0
+		&_mod
+			margin: 60px auto 0
+		&-inner
+			display: flex
+			margin: 0 -15px
+			+sm
+				flex-wrap: wrap
+				justify-content: center
+			+xs
+				flex-direction: column
+				align-items: center
+				margin: 0
+		&-col
+			position: relative
+			width: calc(33.33333% - 30px)
+			margin: 0 15px
+			height: 198px
+			text-align: center
+			+cover-img
+			+vertical
+			+sm
+				min-width: 350px
+				margin: 10px
+			+xs
+				min-width: 0
+				flex: 1 1 100%
+				width: 100%
+			&::after
+				+coverdiv
+				background: rgba(#1b1e28, .8)
+				content: ''
+		&-img
+			+coverdiv
+			z-index: 0
+		&-text
+			position: relative
+			display: inline-block
+			vertical-align: middle
+			z-index: 1
+			color: $white
+		&-title
+			position: relative
+			margin-bottom: 35px
+			+f('pn-700', 27)
+			&::after
+				position: absolute
+				left: calc(50% - 25px)
+				bottom: -15px
+				z-index: 1
+				width: 50px
+				height: 2px
+				background: #fff
+				content: ''
+			&_mod
+				margin-top: 10px
+		&-descr
+			font-size: 16px
+			line-height: 26px
+			
+	&__block
+		display: flex
+		margin-top: 60px
+		+xs
+			margin-top: 30px
+			padding: 40px 0
+			background: #f7f7f7
+		&-row
+			display: flex
+			justify-content: flex-end
+			+xs
+				flex-direction: column
+		&-image
+			overflow: hidden
+			position: relative
+			flex: 0 1 59.5%
+			height: 373px
+			transform: skewX(-4.5deg)
+			transform-origin: 0 0
+			+cover-img
+			+sm
+				flex: 0 1 50%
+				height: 310px
+			+xs
+				display: none
+			&::after
+				+coverdiv
+				background: rgba($orange, .8)
+				content: ''
+			&_right
+				transform: skewX(4.5deg)
+				transform-origin: 100% 0
+			&_right .about__block-img
+				transform: translate(-50%, -50%) skew(-4.5deg)
+			
+		&-img
+			position: absolute
+			top: 50%
+			left: 50%
+			height: 100%
+			width: calc(100% + 30px)
+			transform: translate(-50%, -50%) skew(4.5deg)
+		&-text
+			position: relative
+			display: flex
+			flex-direction: column
+			justify-content: center
+			flex: 0 1 40.5%
+			padding: 0 15px 0 55px
+			background: #f7f7f7
+			+md
+				padding: 0 15px
+			+sm
+				flex: 1 1 60%
+			&::after
+				position: absolute
+				top: 0
+				bottom: 0
+				left: -9.5%
+				width: 15%
+				background: #f7f7f7
+				content: ''
+				transform: skew(-4.5deg)
+				z-index: -1
+				+xs
+					display: none
+			&_left
+				padding: 0 60px 0 15px
+				text-align: right
+				+lg
+					padding: 0 40px 0 15px
+			&_left::after
+				content: ''
+				left: auto
+				right: -9.5%
+			&_left .about__block-list
+				&:not(:first-child)
+					+lg
+						margin-left: 30px
+					+xs
+						margin-left: 0
+			&_left .about__block-title
+				margin-top: 5px
+				margin-right: 65px
+				+xs
+					margin-top: 0
+					margin-right: 0
+					text-align: left
+		&-title
+			margin-top: -15px
+			margin-bottom: 20px
+			+sm
+				margin-top: 0
+		&-list
+			color: #717171
+			text-align: left
+			&:not(:first-child)
+				margin-left: 50px
+				+xs
+					margin-left: 0
+			li
+				position: relative
+				white-space: nowrap
+				+f('pn-300', 17, 28)
+				&:not(:first-child)
+					margin-top: 5px
+			span
+				display: inline-block
+				vertical-align: middle
+			.icon
+				display: inline-block
+				vertical-align: middle
+				margin-right: 8px
+				font-size: 8px
+				fill: $blue-dark
+
+/* ===================================
+	 cards-slider
+	 =================================== */
+.cards-slider
+	position: relative
+	padding: 15px 0
+	margin: 0 -15px
+	+sm
+		padding: 15px 0 60px
+		margin: 0 30px
+	+xs
+		margin: 0 -5px 20px
+	&::before, &::after
+		content: ''
+		position: absolute
+		top: 10px
+		bottom: 10px
+		width: 350px
+		z-index: 2
+		+sm
+			display: none
+	&::before
+		left: 0
+		background-image: linear-gradient(to right, rgba(255, 255, 255, 0.85) 55%, transparent)
+	&::after
+		right: 0
+		content: ''
+		background-image: linear-gradient(to left, rgba(255, 255, 255, 0.85) 55%, transparent)
+	&__inner
+		display: none
+		&.slick-initialized
+			display: block
+	&__item
+		min-height: 220px
+		margin: 15px
+		padding: 23px 31px 20px
+		background: rgba($white, .9)
+		box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+		color: $blue-dark
+		+sm
+			margin: 5px
+			padding: 23px 15px 20px
+		&.slick-active
+			&:first-child
+				background: #000
+		&-date
+			display: flex
+			align-items: center
+			margin-bottom: 10px
+			+f('pn-700')
+			.icon
+				font-size: 32px
+				margin-right: 9px
+		&-text
+			height: 100px
+			margin-bottom: 10px
+			+f('pn-300')
+			line-height: 25px
+		&-link
+			margin-top: auto
+			
+	.slider-btn
+		+sm
+			top: calc(45% - 20px)
+			&_prev
+				left: -5.7%
+				+xs
+					left: 30%!important
+			&_next
+				right: -5.7%
+				+xs
+					right: 30%!important
+		+xs
+			top: auto
+			bottom: 10px

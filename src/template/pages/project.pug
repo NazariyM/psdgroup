@@ -1,0 +1,73 @@
+extends ../extend/default
+
+block variables
+	-title = 'Судебные споры'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'Проекты', 'Судебные споры']
+		-activeIndex = 2
+		-pageInfo = {title: 'Судебные споры'}
+		include ../components/page-info
+
+		//begin project
+		+b.SECTION.project(data-fade-zoom)
+			+e.container.container
+				+e.ARTICLE.article
+					+e.H2.article-title.title-md Судебный спор о налоговых последствиях
+					+e.info
+						+e.info-item Проект №321
+						+e.A.info-item(href='#!') #Судебныеспоры
+						+e.SPAN.info-item
+							+i('loc')
+							+e.SPAN Москва
+					+e.descr
+						+e.P.descr-text
+							+e.STRONG Данное судебное дело стало продолжением судебного дела, которое налогоплательщик изначально проиграл. Несколько лет назад он купил имущество, которое сразу же сдал в аренду обратно своему продавцу.
+						+e.P.descr-text Налоговый орган доказал в суде, что указанные сделки по покупке и аренде имущества являются мнимыми. Но в рамках первого спора единственным налоговым последствием стал отказ налогоплательщику в вычетах по приобретенному имуществу. При этом не обсуждался вопрос, а что делать с НДС, который налогоплательщик исключил со сделки аренды (а в итоге НДС он еще и уплатил в бюджет). Вот этот самый НДС налогоплтельщик и поделал вернуть: если никакой аренды не было то НДС по такой аренде исчисляться был не должен.
+				//begin docs
+				+e.docs
+					+e.H4.docs-title.title-xs Документация проекта
+					+e.docs-row.js-mobile-slider
+						+e.A.docs-item(href='static/img/content/document-big.jpg' data-fancybox='documents')
+							+e.IMG(src='static/img/content/document-1.jpg' alt='image')
+							+i('loupe')
+						+e.A.docs-item(href='static/img/content/document-big.jpg' data-fancybox='documents')
+							+e.IMG(src='static/img/content/document-2.jpg' alt='image')
+							+i('loupe')
+						+e.A.docs-item(href='static/img/content/document-big.jpg' data-fancybox='documents')
+							+e.IMG(src='static/img/content/document-3.jpg' alt='image')
+							+i('loupe')
+						+e.A.docs-item(href='static/img/content/document-big.jpg' data-fancybox='documents')
+							+e.IMG(src='static/img/content/document-1.jpg' alt='image')
+							+i('loupe')
+						+e.A.docs-item(href='static/img/content/document-big.jpg' data-fancybox='documents')
+							+e.IMG(src='static/img/content/document-2.jpg' alt='image')
+							+i('loupe')
+						+e.A.docs-item(href='static/img/content/document-big.jpg' data-fancybox='documents')
+							+e.IMG(src='static/img/content/document-3.jpg' alt='image')
+							+i('loupe')
+
+		//begin interest
+		+b.SECTION.interest
+			+e.container.container
+				+e.H2.title.title-md Вас так же может заинтересовать
+				+e.row
+					-cardsCount = 3
+					-
+						var eventCardList = [{
+						classMod: '_read interest__event-card',
+						title: 'Проект: Уголовное расследование',
+						hashTag: '#уголовное право',
+						descr: 'Все изменения Федерального Закона РФ “Об автомобильных дорогах и о дорожной деятельности”',
+						readLink: 'Читать'
+						}]
+					include ../components/event-card
+
+		//begin ask
+		+b.SECTION.ask(data-fade-on-scroll)
+			+e.container.container
+				+e.A.title.title-md._white(href='#!') Остались вопросы?

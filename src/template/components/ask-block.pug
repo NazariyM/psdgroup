@@ -1,0 +1,20 @@
+if askBlock ? askBlock : askBlock = []
+if askBlock.title ? askBlock.title : askBlock.title = 'Есть что спросить?'
+
+//begin askBlock
++b.SECTION.ask-block(class= askBlock.classMod ? askBlock.classMod : '' data-fade-on-scroll)
+	+e.container.container
+		+e.H3.title.title-md= askBlock.title
+		+e.FORM.form(action='#!' method='POST')
+			+e.form-inner
+				+e.form-col
+					+e.form-field
+						+b.INPUT.input._md(type='text' placeholder='Ваше имя' name='')
+					+e.form-field
+						+b.INPUT.input._md(type='text' placeholder='Телефон' name='')
+				+e.form-col
+					+e.TEXTAREA.message.message(placeholder='Ваш комментарий')
+			+e.P.descr Мы обработаем Ваш запрос и дадим ответ в течение одного рабочего дня.
+			+e.BUTTON.submit-btn.btn(type='button') задать вопрос
+	+b.line._top(data-fade-line)
+	+b.line(data-fade-line)

@@ -1,0 +1,26 @@
+if aboutBlock ? aboutBlock : aboutBlock = []
+if aboutBlock.title ? aboutBlock.title : aboutBlock.title = ['О компании']
+-aboutCount = [4, 50, 7, 1]
+-aboutText = ['года успешной работы', 'успешных проектов', 'профессионалов своего дела', 'одна из лучших компаний в 2014 г.']
+
+//begin about-block
++b.SECTION.about-block(class= aboutBlock.classMod ? aboutBlock.classMod : '')
+	+e.inner
+		+e.H3.title.title-md= aboutBlock.title
+		+e.row
+			mixin aboutItem(text)
+				+e.item
+					+e.item-count= aboutCount[text]
+					+e.item-text= aboutText[text]
+			each el, text in aboutCount
+				+aboutItem(text)
+		+e.descr
+			+e.P Юридическая компания
+				= ' '
+				+e.STRONG "Комплексная правовая защита"
+				= ' '
+				| (Absolute legal protection group) специализируется на оказании юридических услуг как физическим лицам, так и юридическим лицам и индивидуальным предпринимателям на всей территории РФ, в странах СНГ, а также за рубежом.
+			+e.P
+				+e.STRONG Наши специалисты
+				= ' '
+				| имеют большой опыт и обширную практику, позволяющую решать даже самые сложные вопросы, подбирая индивидуальный подход, а при необходимости находя нестандартные решения.

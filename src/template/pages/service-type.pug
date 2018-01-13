@@ -1,0 +1,193 @@
+extends ../extend/default
+
+block variables
+	-title = 'Вид услуги'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'услуги', 'Банкротство юридических лиц']
+		-activeIndex = 3
+		-
+			pageInfo = {
+			classMod: '_has-descr',
+			title: 'Банкротство юридических лиц',
+			descr: 'Налоговый орган доказал в суде, что указанные сделки по покупке и аренде имущества являются мнимыми. Но в рамках первого спора единственным налоговым последствием стал отказ налогоплательщику в вычетах по приобретенному имуществу. При этом не обсуждался вопрос, а что делать с НДС, который налогоплательщик исключил со сделки аренды (а в итоге НДС он еще и уплатил в бюджет). Вот этот самый НДС налогоплтельщик и поделал вернуть: если никакой аренды не было то НДС по такой аренде исчисляться был не должен.',
+			btn: 'подробнее об услуге',
+			btnClass: 'js-scroll-next'}
+		include ../components/page-info
+
+		+b.SECTION.services._text(data-item='hidden')
+			+e.container.container
+				// begin serv-list
+				+b.UL.serv-list
+					-
+						servList = [
+						'возбуждение процедуры банкротства юридического лица или индивидуального предпринимателя;',
+						'включение в реестр требований кредиторов;',
+						'обжалование действий арбитражного управляющего;',
+						'полное сопровождение процедуры банкротства юридического лица;',
+						'возбуждение процедуры банкротства граждан;',
+						'ведение дела банкротства граждан;',
+						'представление интересов в суде;',
+						'консультации по алгоритму оценки сделок, несущих в себе риски возникновения персональной ответственности руководителя и контролирующих лиц за увеличение неплатежеспособности и снижение стоимости активов компании;',
+						'правовая поддержка в случае предъявления обвинений руководителю в ходе процедуры банкротства или по ее окончанию.'
+						]
+					for servLink in servList
+						+e.LI.item
+							+i('shield_xs')
+							+e.SPAN.item-text= servLink
+
+		//-benefits
+		include ../components/benefits
+
+		//begin consult
+		+b.SECTION.consult(data-fade-on-scroll)(data-item='hidden')
+			+e.container.container
+				+e.H4.title.title-sm Бесплатная консультация
+				+e.P.descr Оставьте заявку и получите консультацию практикующиего юриста по телефону или офису.
+				+e.FORM.form(action='#!' method='POST')
+					+e.form-field
+						+b.INPUT.input._md(type='text' placeholder='Ваше имя' name='text')
+					+e.form-field
+						+b.INPUT.input._md(type='text' placeholder='Ваш телефон' name='text')
+					+e.BUTTON.form-btn.btn(type='submit') Подписаться
+
+		//begin expert
+		+b.SECTION.expert
+			+e.container.container
+				+e.H4.title.title-sm Квалифицированный специалист в области банкродства
+				+e.person(data-fade-zoom)
+					+e.person-img
+						+e.IMG(src='static/img/content/testimon-1.png' alt='image')
+					+e.person-text
+						+e.person-info
+							+e.H6.person-data.title-xs Косов Андрей
+							+e.H6.person-data._color.title-xs Юрист
+						+e.P.person-descr Налоговый орган доказал в суде, что указанные сделки по покупке и аренде имущества являются мнимыми. Но в рамках первого спора единственным налоговым последствием стал отказ налогоплательщику в вычетах по приобретенному имуществу. При этом не обсуждался вопрос, а что делать с НДС, который налогоплательщик исключил со сделки
+						+b.A.link(href='#!')
+							+e.SPAN читать подробнее
+							+i('arr_r')
+
+				+e.person(data-fade-zoom)
+					+e.person-img
+						+e.IMG(src='static/img/content/testimon-2.png' alt='image')
+					+e.person-text
+						+e.person-info
+							+e.H6.person-data.title-xs Родищев Николай
+							+e.H6.person-data._color.title-xs Юрист
+						+e.P.person-descr Налоговый орган доказал в суде, что указанные сделки по покупке и аренде имущества являются мнимыми. Но в рамках первого спора единственным налоговым последствием стал отказ налогоплательщику в вычетах по приобретенному имуществу. При этом не обсуждался вопрос, а что делать с НДС, который налогоплательщик исключил со сделки
+						+b.A.link(href='#!')
+							+e.SPAN читать подробнее
+							+i('arr_r')
+
+				+e.person(data-fade-zoom)
+					+e.person-img
+						+e.IMG(src='static/img/content/testimon-3.png' alt='image')
+					+e.person-text
+						+e.person-info
+							+e.H6.person-data.title-xs Иванова Кристина
+							+e.H6.person-data._color.title-xs Юрист
+						+e.P.person-descr Налоговый орган доказал в суде, что указанные сделки по покупке и аренде имущества являются мнимыми. Но в рамках первого спора единственным налоговым последствием стал отказ налогоплательщику в вычетах по приобретенному имуществу. При этом не обсуждался вопрос, а что делать с НДС, который налогоплательщик исключил со сделки
+						+b.A.link(href='#!')
+							+e.SPAN читать подробнее
+							+i('arr_r')
+
+		//begin steps
+		+b.SECTION.steps(data-fade-on-scroll)
+			+e.container.container
+				+e.H4.title.title-md Схема работы
+				+e.item(data-fade-delay)
+					+e.item-count 1
+					+e.item-text
+						+e.H6.item-title.title-xs Консультация практикующего юриста
+						+e.P.item-descr Консультацию проводит специалист, который занимается процедурой банкротства.
+						+e.P.item-descr
+							+e.STRONG Результат:
+							= ' '
+							| Вы понимаете в каком направлении мы будем действовать и что мы будм делать
+				+e.item(data-fade-delay)
+					+e.item-count 2
+					+e.item-text
+						+e.H6.item-title.title-xs Избавляем от колекторов
+						+e.P.item-descr Уже в первый месяц мы сделаем так, что вам не будут звонить коллекторы:
+						+e.P.item-descr
+							+e.STRONG Результат:
+							= ' '
+							| сформируем досудебное заявление, заявление о намерение, рассылка кредиторам
+				+e.item(data-fade-delay)
+					+e.item-count 3
+					+e.item-text
+						+e.H6.item-title.title-xs Собираем и готовим документы
+						+e.P.item-descr Собираем необходимые документы для суда и готовим заявление в арбитражный суд.
+						+e.P.item-descr
+							+e.STRONG Результат:
+							= ' '
+							| весь пакет документов мы передаем в суд
+				+e.item(data-fade-delay)
+					+e.item-count 4
+					+e.item-text
+						+e.H6.item-title.title-xs Судебное производство
+						+e.P.item-descr Назначаются и проводятся судебные заседания, мы представляем ваши интересы в суде в течение всей процедуры (5-12 месяцев), работа с финансовым упревлещим
+						+e.P.item-descr
+							+e.STRONG Результат:
+							= ' '
+							| эффективное решение всех судебных заседаний
+				+e.item(data-fade-delay)
+					+e.item-count 5
+					+e.item-text
+						+e.H6.item-title.title-xs Долги списаны
+						+e.P.item-descr Выносится определение арбитражного суда об освобождение Вас от долгов
+						+e.P.item-descr Результат:
+							= ' '
+							+e.STRONG решение суда
+
+		//begin testimonials
+		+b.SECTION.testimonials._service
+			+e.container._has-slider.container
+
+				+e.inner(data-fade-delay)
+					+e.H4.title.title-md Случай из практики
+					+e.slider.js-default-slider
+						-slidesCount = 0
+						while slidesCount < 2
+							+e.item
+								+e.item-in
+									+e.item-img-wrap._sm
+										+e.IMG(src='static/img/content/hardees.png' alt='image')
+									+e.item-text
+										+e.item-text-in
+											+e.item-title ООО ЗАО “Лион”
+											+e.P.item-descr Очень благодарна вашей компании, нашла у вас прекрасного юриста, который помог вернуть деньги за заказанный товар! Потеряла надежду вернуть свои деньги после неудачной покупки телефона в очень непорядочной организации - интернет-магазин по продаже мобильных телефонов. История длилась 2 месяца. Телефон оказался неисправен, но мне никто и не пытался вернуть деньги за него (хотя неисправность была определена сразу и телефон был сдан через 3 дня после покупки).
+												+i('quotes')
+											+e.item-actions
+												+e.A.item-link.link(href='#!')
+													+e.SPAN Смотреть отзыв клиента
+												+e.A.item-link.link._color(href='#!')
+													+e.SPAN читать полностью
+													+i('arr_r')
+							-slidesCount++
+
+				+e.inner(data-fade-zoom)(data-item='hidden')
+					+e.H4.title.title-md Отзывы
+					+e.slider.js-default-slider
+						-slidesCount = 0
+						while slidesCount < 2
+							+e.item
+								+e.item-in
+									+e.item-img-wrap
+										+e.IMG(src='static/img/content/testimon-1.png' alt='image')
+									+e.item-text
+										+e.item-text-in
+											+e.item-title ООО ЗАО “Лион”
+											+e.P.item-descr Очень благодарна вашей компании, нашла у вас прекрасного юриста, который помог вернуть деньги за заказанный товар! Потеряла надежду вернуть свои деньги после неудачной покупки телефона в очень непорядочной организации - интернет-магазин по продаже мобильных телефонов. История длилась 2 месяца. Телефон оказался неисправен, но мне никто и не пытался вернуть деньги за него (хотя неисправность была определена сразу и телефон был сдан через 3 дня после покупки).
+												+i('quotes')
+											+e.item-actions
+												+e.A.item-link.link(href='#!')
+													+e.SPAN оригинал отзыва
+												+e.A.item-link.link._color(href='#!')
+													+e.SPAN читать полностью
+													+i('arr_r')
+							-slidesCount++

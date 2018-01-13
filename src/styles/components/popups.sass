@@ -1,0 +1,194 @@
+.popup
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	opacity: 0
+	visibility: hidden
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+	z-index: 1050
+	overflow: auto
+	outline: 0
+	text-align: center
+	font-size: 0
+	transform: translate3d(0, 0, 0)
+	background-color: rgba($blue-dark, .9)
+	-webkit-transition: opacity .3s ease, -webkit-transform .5s ease
+	transition: opacity .3s ease, -webkit-transform .5s ease
+	-o-transition: opacity .3s ease, -o-transform .5s ease
+	-moz-transition: opacity .3s ease, transform .5s ease, -moz-transform .5s ease
+	transition: opacity .3s ease, transform .5s ease
+	transition: opacity .3s ease, transform .5s ease, -webkit-transform .5s ease, -moz-transform .5s ease, -o-transform .5s ease
+	will-change: opacity, transform
+	&:after
+		content: ''
+		display: inline-block
+		vertical-align: middle
+		width: 0
+		height: 100%
+	&.opened
+		opacity: 1
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+		visibility: visible
+	&__close
+		position: absolute
+		top: -8px
+		right: -8px
+		width: 28px
+		height: 28px
+		display: flex
+		justify-content: center
+		align-items: center
+		cursor: pointer
+		border-radius: 50%
+		background: $orange
+		+trs
+		.no-touch &:hover
+			background: #D32F2F
+		.no-touch &:active
+			background: #B71C1C
+		.icon
+			fill: $white
+			font-size: 12px
+		+sm
+			right: 7px
+			top: 8px
+	&__container
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		max-width: 600px
+		position: relative
+		padding: 40px 0 30px
+		background: $white
+		box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+		margin: 30px auto
+		-webkit-transition: opacity .2s ease, visibility 0s .1s, -webkit-transform .3s ease
+		transition: opacity .2s ease, visibility 0s .1s, -webkit-transform .3s ease
+		-o-transition: opacity .2s ease, visibility 0s .1s, -o-transform .3s ease
+		-moz-transition: opacity .2s ease, transform .3s ease, visibility 0s .1s, -moz-transform .3s ease
+		transition: opacity .2s ease, transform .3s ease, visibility 0s .1s
+		transition: opacity .2s ease, transform .3s ease, visibility 0s .1s, -webkit-transform .3s ease, -moz-transform .3s ease, -o-transform .3s ease
+		-webkit-transform: translate3d(0, -50px, 0)
+		-moz-transform: translate3d(0, -50px, 0)
+		transform: translate3d(0, -50px, 0)
+		will-change: transform, opacity
+		+sm
+			margin: 15px 0
+			padding: 35px 0
+	
+	&__inner
+		max-width: 400px
+		margin: 0 auto
+		+xs
+			padding: 0 10px
+	&__text
+		max-width: 425px
+		margin: 0 auto 30px
+	&__title
+		max-width: 460px
+		margin: 0 auto 22px
+		font-size: 30px
+		+xs
+			padding: 0 10px
+			font-size: 28px
+		&-link
+			color: #2ab1b4
+			display: inline-block
+			text-decoration: underline
+	&__descr
+		max-width: 420px
+		margin: 10px auto 10px
+		+f('pn-300', 16, 25)
+		line-height: 28px
+		text-align: center
+		span
+			color: $orange
+	&__form
+		&-row
+			display: flex
+			justify-content: space-between
+			margin-top: 15px
+			margin-bottom: 20px
+			+xs
+				flex-wrap: wrap
+		&-col
+			flex: 0 0 195px
+			+xs
+				flex: 1 1 100%
+				width: 100%
+				&:not(:first-child)
+					margin-top: 10px
+		&-field
+			&:not(:first-child)
+				margin-top: 20px
+			+sm
+				flex: 1 1 100%
+				margin: 0
+			&_left
+				text-align: left
+				+xs
+					text-align: center
+		&-descr
+			max-width: 370px
+			margin: 10px auto 10px
+			font-size: 17px
+			color: #717171
+			line-height: 28px
+			text-align: center
+		&-example
+			margin-top: 8px
+			padding-left: 26px
+			+f('pn-300', 14)
+			color: #9a9a9a
+			text-align: left
+			&_hidden-mob
+				+sm
+					display: none
+			&_visible-mob
+				+sm
+					display: block
+		&-actions
+			margin-top: 10px
+			padding-top: 10px
+			border-top: 1px solid #f0f1f3
+			&-in
+				display: flex
+				justify-content: space-between
+				+sm
+					flex-direction: column
+	&__input
+		padding: 0 23px
+	&__message
+		height: 115px
+	&__submit-btn
+		font-size: 13px
+	&__add
+		position: relative
+		margin: 25px 0 25px
+		padding: 11px 0 30px
+		border-top: 1px solid #e1e1e1
+		border-bottom: 1px solid #e1e1e1
+		+xs
+			padding: 11px 10px 30px
+		&::before
+			top: 1px
+		&::after
+			bottom: 0
+	&__block
+		margin-top: 40px
+		padding: 20px 0 0
+		border-top: 1px solid #e1e1e1
+
+body.popup-opened
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	overflow: hidden
+
+.popup.opened .popup__container
+	-webkit-transform: translate3d(0, 0, 0)
+	-moz-transform: translate3d(0, 0, 0)
+	transform: translate3d(0, 0, 0)

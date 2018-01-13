@@ -1,0 +1,131 @@
+extends ../extend/default
+
+block variables
+	-title = 'Вакансии'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'Вакансии']
+		-activeIndex = 2
+		-pageInfo = {title: 'Вакансии'}
+		include ../components/page-info
+
+		//begin vacancy
+		+b.SECTION.vacancy(data-fade-zoom)
+			+e.container.container
+				+e.item.js-toggle-block.is-open
+					+e.H3.title.title-md.js-toggle-title
+						+e.SPAN Помощник адвоката (юриста)
+					+e.details.js-toggle-content
+						+e.details-in
+							+e.block
+								+e.block-title Требования к кандидату
+								+e.UL.block-list
+									+e.LI Высшее юридическое образование (бакалавар/специалист/магистр)
+										+i('shield_xs')
+									+e.LI Хорошие теоретические знания гражданского и гражданско-процессуального права (важно)
+										+i('shield_xs')
+							+e.block
+								+e.block-title Обязаности кандидата:
+								+e.UL.block-list
+									+e.LI Подготовка правовых алгоритмов и документов
+										+i('shield_xs')
+									+e.LI Претензионая работа, подготовка документов для предоставительсво в судах, арбитражных судах, госорганах, на стадии исполнительного производтсва.
+										+i('shield_xs')
+							+e.block._striped(data-item='hidden')
+								+e.block-title Зарплата
+								+e.block-salary
+									+e.DIV.block-salary-count от
+										= ' '
+										+e.SPAN 50 000
+										= ' '
+										| руб.
+									+e.DIV.block-salary-descr по результатам собеседования
+
+						+e.actions
+							+e.BUTTON.actions-submit.btn(type='button') ОСТАВИТЬ ЗАЯВКУ
+							+e.BUTTON.actions-toggle.btn._white-ico.js-toggle-btn(type='button')
+								+b.SPAN свернуть
+								+i('arr_r')
+
+				+e.item.js-toggle-block
+					+e.H3.title.title-md.js-toggle-title
+						+e.SPAN АДВОКАТ
+					+e.details.js-toggle-content
+						+e.details-in
+							+e.block
+								+e.block-title Требования к кандидату
+								+e.UL.block-list
+									+e.LI Выслее юридическое образование (бакалавар/специалист/магистр)
+										+i('shield_xs')
+									+e.LI Хорошие теоретические знания гражданского и гражданско-процессуального права (важно)
+										+i('shield_xs')
+							+e.block
+								+e.block-title Обязаности кандидата:
+								+e.UL.block-list
+									+e.LI Подготовка правовых алгоритмов и документов
+										+i('shield_xs')
+									+e.LI Претензионая работа, подготовка документов для предоставительсво в судах, арбитражных судах, госорганах, на стадии исполнительного производтсва.
+										+i('shield_xs')
+							+e.block._striped(data-item='hidden')
+								+e.block-title Зарплата
+								+e.block-salary
+									+e.DIV.block-salary-count от
+										= ' '
+										+e.SPAN 50 000
+										= ' '
+										| руб.
+									+e.DIV.block-salary-descr по результатам собеседования
+
+						+e.actions
+							+e.BUTTON.actions-submit.btn(type='button') ОСТАВИТЬ ЗАЯВКУ
+							+e.BUTTON.actions-toggle.btn._white-ico.js-toggle-btn(type='button')
+								+b.SPAN свернуть
+								+i('arr_r')
+
+				+e.item.js-toggle-block
+					+e.H3.title.title-md.js-toggle-title
+						+e.SPAN ЮРИСТ
+					+e.details.js-toggle-content
+						+e.details-in
+							+e.block
+								+e.block-title Требования к кандидату
+								+e.UL.block-list
+									+e.LI Выслее юридическое образование (бакалавар/специалист/магистр)
+										+i('shield_xs')
+									+e.LI Хорошие теоретические знания гражданского и гражданско-процессуального права (важно)
+										+i('shield_xs')
+							+e.block
+								+e.block-title Обязаности кандидата:
+								+e.UL.block-list
+									+e.LI Подготовка правовых алгоритмов и документов
+										+i('shield_xs')
+									+e.LI Претензионая работа, подготовка документов для предоставительсво в судах, арбитражных судах, госорганах, на стадии исполнительного производтсва.
+										+i('shield_xs')
+							+e.block._striped(data-item='hidden')
+								+e.block-title Зарплата
+								+e.block-salary
+									+e.DIV.block-salary-count от
+										= ' '
+										+e.SPAN 50 000
+										= ' '
+										| руб.
+									+e.DIV.block-salary-descr по результатам собеседования
+
+						+e.actions
+							+e.BUTTON.actions-submit.btn(type='button') ОСТАВИТЬ ЗАЯВКУ
+							+e.BUTTON.actions-toggle.btn._white-ico.js-toggle-btn(type='button')
+								+b.SPAN свернуть
+								+i('arr_r')
+
+		//begin vac-subscr
+		+b.SECTION.vac-subscr(data-fade-on-scroll)
+			+e.container.container
+				+e.H3.title.title-sm Подпишитесь на свежие вакансии
+				+e.FORM.form(action='#!' method='POST')
+					+e.form-field
+						+e.INPUT.input.input._md(type='email' placeholder='Ваш e-mail' name='' required)
+					+e.BUTTON.btn.btn(type='submit') Подписаться

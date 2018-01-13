@@ -1,0 +1,122 @@
+.screen
+	position: relative
+	height: 100vh
+	background: #1b1e28
+	&__item
+		position: relative
+		height: 100vh
+		transition: opacity .2s
+		cursor: default
+		+vertical
+		&.slick-active &-img
+			transform: scale(1)
+		&-img
+			+coverdiv
+			+cover
+			transform: scale(1.2)
+			transition: all 1s cubic-bezier(0.7, 0, 0.3, 1)
+			opacity: .2
+		&-text
+			position: relative
+			display: inline-block
+			vertical-align: middle
+			padding: 0 10px
+			z-index: 1
+			font-size: 20px
+			line-height: 35px
+			+lg
+				padding: 50px 10px 0
+			+xs
+				padding: 80px 10px 0
+				font-size: 17px
+				line-height: 25px
+		&-title
+			max-width: 610px
+			margin: 0 auto 25px
+			+xs
+				font-size: 26px
+				line-height: 30px
+				margin-bottom: 10px
+		&-descr
+			max-width: 450px
+			margin: 0 auto
+			+f('pn-300')
+			color: $text-color
+			&-mark
+				color: $orange
+				background: 0
+				+f('pn-400i')
+				
+	&__slider
+		display: none
+		animation: fadeIn 1.3s
+		&.slick-initialized
+			display: block
+		.slick-dots
+			position: absolute
+			bottom: 150px
+			left: 0
+			right: 0
+			z-index: 2
+			font-size: 0
+			padding: 0 30px
+			text-align: center
+			+lg
+				bottom: 100px
+			+xs
+				bottom: 25px
+			li
+				position: relative
+				display: inline-block
+				vertical-align: top
+				cursor: pointer
+				&::after
+					content: ''
+					position: absolute
+					top: calc(50% - 1px)
+					left: 0
+					width: 100%
+					height: 2px
+					background: transparentize($white, .8)
+					transition: .9s ease
+				&:not(:first-child)
+					margin-left: 20px
+				&.slick-active::after
+					background: $orange
+			button
+				width: 94px
+				height: 10px
+				border: 0
+				+hide-text
+				+xs
+					width: 30px
+					height: 20px
+					
+/* mouse
+	----------------------------------- */
+.anim-mouse
+	position: absolute
+	bottom: 30px
+	left: calc(50% - 8px)
+	width: 32px
+	height: 47px
+	border: 2px solid rgba(#fff, .6)
+	border-radius: 14px
+	cursor: pointer
+	+xs
+		display: none
+.anim-mouse__point
+	position: absolute
+	width: 6px
+	height: 6px
+	border-radius: 100%
+	background: rgba(#fff, .9)
+	left: 50%
+	top: 70%
+	transform: translate(-50%, 0)
+	animation-name: mousePoint
+	animation-duration: 2.3s
+	animation-iteration-count: infinite
+	animation-direction: reverse
+	animation-timing-function: linear
+	animation-fill-mode: backwards

@@ -1,0 +1,126 @@
+extends ../extend/default
+
+block variables
+	-title = 'О компании'
+	-headerClass = '_static'
+	-map = false
+
+block main
+	main.content.content_static
+
+		-breadcrumbsList = ['Главная', 'О компании']
+		-activeIndex = 2
+		-pageInfo = {title: 'О компании'}
+		include ../components/page-info
+
+		//begin about
+		+b.SECTION.about(data-fade-on-scroll)
+			+e.container.container
+				+e.H2.title.title-md История компании
+				+b.cards-slider.about__cards-slider.js-cards-slider
+					-itemCount = 0
+					while itemCount < 3
+
+						+e.item(data-fade-delay)
+							+e.item-date
+								+i('calendar')
+								+e.SPAN 2016
+							+e.P.item-text.js-dot В 2016 году наши сотрудники прошли различные стажировки и практику в США, а так же различных стран Европы.
+							+e.A.item-link.link(href='#!')
+								+e.SPAN читать подробнее
+								+i('arr_r')
+
+						+e.item(data-fade-delay)
+							+e.item-date
+								+i('calendar')
+								+e.SPAN 2015
+							+e.P.item-text.js-dot В 2015 году успешно выиграно более 350 дел в различных направления. Наши сотрудники представляли интересы наших клиентов в 5 странах.
+							+e.A.item-link.link(href='#!')
+								+e.SPAN читать подробнее
+								+i('arr_r')
+
+						-itemCount++
+
+				+e.now(data-fade-delay)
+					+e.H3.now-title.title-sm Сегодня
+					+e.P.now-descr За нашими плечами многие годы успешной работы в крупных и известных юридических фирмах, сотни процессов, множество клиентов, ценящих наши заслуги. Мы создали “ALP GROUP” как новую для российского рынка форму работы юридического консалтинга - группу компаний, специализирующуюся на разрешении сложных судебных споров, порой пересекающих национальные границы. Мы верим, что специализация и компактный размер фирмы гарантируют уровень вовлеченности в дела клиентов, который отличает нас от больших юридических фирм.
+
+				+e.summary
+					+e.summary-inner(data-fade-zoom)
+						+e.summary-col
+							+e.IMG.summary-img(src='static/img/bg/about-summ-1.jpg' alt='img')
+							+e.summary-text
+								+e.summary-title 1 млрд. руб
+								+e.P.summary-descr сумма выигранных дел
+									+e.BR
+									| в 2016 году
+						+e.summary-col
+							+e.IMG.summary-img(src='static/img/bg/about-summ-2.jpg' alt='img')
+							+e.summary-text
+								+e.summary-title 95%
+								+e.P.summary-descr дел мы выиграли
+									+e.BR
+									| в 2016 году
+						+e.summary-col
+							+e.IMG.summary-img(src='static/img/bg/about-summ-3.jpg' alt='img')
+							+e.summary-text
+								+e.summary-title._mod 10 юристов
+								+e.P.summary-descr в нашей команде
+								
+			+e.block(data-fade-zoom)
+				+e.block-image
+					+e.block-img
+						+e.IMG(src='static/img/bg/about-block-1.jpg' alt='img')
+				+e.block-text
+					+e.H3.block-title.title-sm Что мы делаем
+					-blockList = ['Коммерческий арбитраж', 'Судебные дела за рубежом', 'Споры в российских судах', 'Урегулирование споров мирным путем', 'Раследования и проверки']
+					+e.UL.block-list
+						for blockText in blockList
+							+e.LI
+								+i('shield_xs')
+								+e.SPAN= blockText
+			+e.container.container
+				+e.summary._mod
+					+e.summary-inner(data-fade-zoom)
+						+e.summary-col
+							+e.IMG.summary-img(src='static/img/bg/about-summ-4.jpg' alt='img')
+							+e.summary-text
+								+e.summary-title 73 дел
+								+e.P.summary-descr В государственных судах
+									+e.BR
+									| России, Франции в 2016 году
+						+e.summary-col
+							+e.IMG.summary-img(src='static/img/bg/about-summ-5.jpg' alt='img')
+							+e.summary-text
+								+e.summary-title 30
+								+e.P.summary-descr Уголовных дел успешно
+									+e.BR
+									| раскрытых нашей командой
+						+e.summary-col
+							+e.IMG.summary-img(src='static/img/bg/about-summ-6.jpg' alt='img')
+							+e.summary-text
+								+e.summary-title._mod 15 стран
+								+e.P.summary-descr по всему миру,
+									+e.BR
+									| где мы защищали
+
+			+e.block(data-fade-zoom)
+				+e.block-text._left
+					+e.H3.block-title.title-sm География услуг
+					+e.block-row
+						-blockList = ['вся территория Российской Федерации', 'Беларусь', 'Украина', 'Казахстан', 'Узбекистан', 'Арабские Эмираты']
+							+e.UL.block-list
+								for blockText in blockList
+									+e.LI
+										+i('shield_xs')
+										+e.SPAN= blockText
+
+						-blockList = ['Великобритания', 'Япония', 'Китай', 'Монако', 'Турции']
+							+e.UL.block-list
+								for blockText in blockList
+									+e.LI
+										+i('shield_xs')
+										+e.SPAN= blockText
+				+e.block-image._right
+					+e.block-img
+						+e.IMG(src='static/img/bg/about-block-2.jpg' alt='img')

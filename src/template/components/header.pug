@@ -1,0 +1,56 @@
++b.HEADER.header(class= headerClass ? headerClass : '')
+	+e.container.container
+		+e.A.logo(href='#!')
+			if homeHeader === true
+				+e.IMG.logo-img-visible(src='static/img/icons/logo.png' alt='img')
+				+e.IMG.logo-img-hidden(src='static/img/icons/logo_black.png' alt='img')
+			else
+				+e.IMG.logo-img-visible(src='static/img/icons/logo_black.png' alt='img')
+				+e.IMG.logo-img-hidden(src='static/img/icons/logo.png' alt='img')
+		+e.block
+			+e.contact
+				+e.contact-col
+					+e.contact-item._mod
+						+i('loc')
+						= ' '
+						+e.SPAN.contact-text г. Москва, Кропоткинская пер. дом №4
+						+e.SPAN.contact-time пн-пт 9:00 - 18:00
+
+				+e.contact-col
+					+e.A.contact-item(href='#!')
+						+i('tel')
+						= ' '
+						+e.SPAN.contact-text +7 (495) 123-45-67
+
+					+e.A.contact-item(href='#!')
+						+i('mail')
+						= ' '
+						+e.SPAN.contact-text info@group-alt.com
+
+				+e.contact-col
+					+e.BUTTON.call-btn.btn(type='button') ОБРАТНЫЙ ЗВОНОК
+					+b.nav-btn.js-nav-btn
+						+e.line._top
+						+e.line._bottom
+
+				+e.contact-col
+					//-socials
+					-socialsClass = '_header'
+					include ../components/socials
+					+e.UL.lang
+						+e.LI.lang-item.is-active
+							+e.A.lang-link(href='#!')
+								+e.SPAN ru
+						+e.LI.lang-item
+							+e.A.lang-link(href='#!')
+								+e.SPAN en
+
+			+b.NAV.nav._header.js-nav
+				-navList = ['о компании', 'услуги', 'аналитика', 'решения', 'клиенты', 'партнеры', 'контакты']
+				+e.UL.list
+					for navLink, index in navList
+						-activeIndex = 3
+						+e.LI.list-item(class= index === activeIndex - 1 ? 'is-active' : '')
+							+e.A.list-link(href='#!')= navLink
+
+	+e.H1.title-hidden ALP-GROUP
